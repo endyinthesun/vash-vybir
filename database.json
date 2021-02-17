@@ -1,0 +1,15 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Aluplast",
+      "advantages": [
+        "німецька якість",
+        "трикамерна профільна система",
+        "чудова глянцева поверхня",
+        "монтажна ширина 60мм"
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et feugiat molestie auctor. Urna quisque morbi facilisi dolor tempor tellus nisi proin. Felis pharetra, amet, massa arcu lectus facilisis. Tellus, aliquet eget cras accumsan ac at. Tempor, morbi ac vestibulum dictum viverra."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+@import "../../styles/colors";
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 0 30px 40px;
+  width: 300px;
+  overflow: hidden;
+  position: fixed;
+  border-right: $border;
+  border-bottom: $border;
+  background: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  top: 0;
+  left: 0;
+  //overflow-y: scroll;
+  z-index: 1001;
+  //scrollbar-width: none;
+
+	letter-spacing: 0.1em;
+
+}

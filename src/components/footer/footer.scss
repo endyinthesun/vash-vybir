@@ -1,0 +1,44 @@
+@import "../../styles/colors";
+
+footer {
+    .footer-info {
+        font-size: 14px;
+        .info_block {
+            margin-bottom: 12px;
+            &:last-child {
+            margin-bottom: 25px;
+            }
+            &_title {
+                font-weight: 400;
+                margin-bottom: 5px;
+                text-transform: lowercase;
+                .icon {
+                    margin-right: 18px;
+                }
+            }
+            &_descr {
+                font-weight: 700;
+                .phone_number {
+                    display: block;
+                    margin-bottom: 2px;
+                }
+            }
+        }
+    }
+    .footer-social{
+        margin-bottom: 10px;
+        border-top: solid 1px $yellow;
+        padding: 20px 0;
+        // &::after {
+        //     content: '';
+        //     width: 100%;
+        //     border-top: solid 1px #ffff;
+        //     position: absolute;
+
+        // }
+        .social_link {
+            display: inline-block;
+            margin-right: 30px;
+        }
+    }
+}

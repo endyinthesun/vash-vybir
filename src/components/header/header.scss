@@ -1,0 +1,78 @@
+@import "../../styles/colors";
+
+.header {
+	// margin-top: 50px;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	// line-height: 27px;
+	&_logo {
+	display: block;
+	width: 200px;
+	text-transform: lowercase;
+	&_icon {
+		width: inherit;
+	}
+	}
+	&_nav {
+		margin-top: 30px;
+	ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		li {
+		margin-top: 10px;
+		cursor: pointer;
+		.nav_link {
+			display: inline-block;
+			box-sizing: border-box;
+			position: relative;
+			transition: color 0.4s;
+			padding-left: 7px;
+			padding-bottom: 3px;
+
+			&:hover {
+				color: $yellow;
+				transition: color 0.25s;
+			}
+			&::after {
+			bottom: 0;
+			right: 0;
+			}
+
+			&::before,
+			&::after {
+			box-sizing: inherit;
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			border: 2px solid transparent;
+			width: 0;
+			height: 0;
+			}
+		}
+		.active {
+			// color: $yellow;
+			&:hover {
+				color: $white;
+				transition: color 0.5s;
+			}
+			&::before,
+			&::after {
+			width: 100%;
+			height: 100%;
+			}
+
+			&::after {
+			border-bottom-color: $yellow;
+			border-left-color: $yellow;
+			transition:
+				height 0.25s ease-out,
+				width 0.25s ease-out 0.25s;
+			}
+		}
+		}
+	}
+	}
+}
