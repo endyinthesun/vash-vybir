@@ -1,23 +1,32 @@
-@import "../../styles/colors";
+@import "../../styles/variables";
 
 footer {
     .footer-info {
-        font-size: 14px;
+        font-size: 13px;
+        padding-top: 30px;
+    	letter-spacing: 0.15em;
         .info_block {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             &:last-child {
-            margin-bottom: 25px;
+            margin-bottom: 50px;
             }
             &_title {
                 font-weight: 400;
-                margin-bottom: 5px;
+                margin-bottom: 10px;
                 text-transform: lowercase;
-                .icon {
-                    margin-right: 18px;
+                &_text {
+                    vertical-align: bottom;
+                }
+                &_icon {
+                    width: 22px;
+                    height: auto;
+                    vertical-align: bottom;
+                    margin-right: 14px;
                 }
             }
             &_descr {
-                font-weight: 700;
+                // font-weight: 700;
+                font-weight: 300;
                 .phone_number {
                     display: block;
                     margin-bottom: 2px;
@@ -26,19 +35,47 @@ footer {
         }
     }
     .footer-social{
-        margin-bottom: 10px;
         border-top: solid 1px $yellow;
         padding: 20px 0;
-        // &::after {
-        //     content: '';
-        //     width: 100%;
-        //     border-top: solid 1px #ffff;
-        //     position: absolute;
-
-        // }
         .social_link {
             display: inline-block;
             margin-right: 30px;
+            &:hover {
+                #vb {
+                    path {
+                        fill: #6F3FAA;
+                    }
+
+                }
+                #fb {
+                    path {
+                        fill: #506EAF;
+                    }
+                    rect {
+                        stroke: #506EAF;
+                    }
+                }
+                #inst {
+                    #rect {
+                        transition: stroke 0.25s;
+                        stroke: url(#gr);
+                    }
+                    #cirle_bg {
+                        stroke: url(#gr);
+                    }
+                    #cirle_sm {
+                        stroke: url(#gr);
+                        fill: url(#gr);
+                    }
+                } 
+            }
+            &_icon {
+                width: 32px;
+                height: auto;
+                path, cirle, rect {
+                    transition: fill 0.25s, stroke 0.25s;
+                }
+            }
         }
     }
 }

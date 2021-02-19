@@ -1,0 +1,13 @@
+@import "./variables";
+#root {
+    height: inherit;
+    position: relative;
+    background: $main-bg;
+  }
+  a {
+    color: $white;
+    &:hover {
+      color: #ffff;
+      text-decoration: none;
+    }
+  }

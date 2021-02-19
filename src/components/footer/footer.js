@@ -17,8 +17,8 @@ function Footer() {
 			<div className="footer-info">
 				<div className="info_block">
 					<div className="info_block_title">
-						<Phone className="icon"/>
-						<span className='title'>телефон</span>
+						<Phone className="info_block_title_icon"/>
+						<span className='info_block_title_text'>телефон</span>
 					</div>
 					<div className="info_block_descr">
 						<a href="tel:+380634130701" className="phone_number">(063) 413 - 07 - 01</a>
@@ -29,8 +29,8 @@ function Footer() {
 
 				<div className="info_block">
 					<div className="info_block_title">
-						<Email className="icon"/>
-						<span className='title'>email</span>
+						<Email className="info_block_title_icon"/>
+						<span className='info_block_title_text'>email</span>
 					</div>
 					<div className="info_block_descr">
 						vubirvikna@ukr.net
@@ -39,8 +39,8 @@ function Footer() {
 
 				<div className="info_block">
 					<div className="info_block_title">
-						<Address className="icon"/>
-						<span className='title'>адреса</span>
+						<Address className="info_block_title_icon"/>
+						<span className='info_block_title_text'>адреса</span>
 					</div>
 					<div className="info_block_descr">
 						вул. Винниченка,65
@@ -51,8 +51,8 @@ function Footer() {
 
 				<div className="info_block">
 					<div className="info_block_title">
-						<Schedule className="icon"/>
-						<span className='title'>графік</span>
+						<Schedule className="info_block_title_icon"/>
+						<span className='info_block_title_text'>графік</span>
 					</div>
 					<div className="info_block_descr">
 						Пн-Пт: 09:00-18:00
@@ -61,14 +61,14 @@ function Footer() {
 			</div>
 
 			<div className="footer-social">
-				<a href="" className="social_link">
-					<Viber />
+				<a href="/" className="social_link">
+					<Viber id='vb' className="social_link_icon"/>
 				</a>
-				<a href="" className="social_link">
-					<Facebook />
+				<a href="/" className="social_link">
+					<Facebook id='fb' className="social_link_icon"/>
 				</a>
-				<a href="" className="social_link">
-					<Instagram />
+				<a href="/" className="social_link">
+					<Instagram id='inst' className="social_link_icon"/>
 				</a>
 			</div>
 		</footer>

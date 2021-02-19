@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import ChoiceService from "../../services/choice-service";
 import "./app.scss";
 
-
 import Sidebar from "../sidebar";
+import {MainPage} from '../pages';
 
 export default class App extends Component {
 	choiceService = new ChoiceService();
@@ -18,12 +18,13 @@ export default class App extends Component {
 	render() {
 		const {page} = this.state;
 		return (
-			<div className="wrapper">
+			<>
 				<Sidebar 
 					onChangePage={this.onChangePage}
 					page={page}
-				/>
-			</div>
+				/> 
+				<MainPage />
+			</>
 		);
 	}
 }

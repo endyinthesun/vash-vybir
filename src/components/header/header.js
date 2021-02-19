@@ -19,9 +19,10 @@ import {ReactComponent as Logo} from "./logo.svg"
 		return (
 			<li key={key}>
 				<div className={clazz}>
-					<a onClick={() => onChangePage(key)}>
+					<span onClick={() => onChangePage(key)}
+					>
 						{label}
-					</a>
+					</span>
 				</div>
 
 			</li>

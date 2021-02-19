@@ -1,0 +1,12 @@
+@import "./fonts";
+@import "./variables";
+@import "./main";
+
+* {
+  color: $white;
+	font-family: Montserrat;
+  line-height: normal;
+}
+html, body {
+  height: 100%;
+}

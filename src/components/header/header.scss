@@ -1,15 +1,14 @@
-@import "../../styles/colors";
+@import "../../styles/variables";
 
 .header {
-	// margin-top: 50px;
 	font-style: normal;
 	font-weight: 400;
 	font-size: 18px;
-	// line-height: 27px;
+	padding-bottom: 40px;
+	letter-spacing: 0.1em;
 	&_logo {
 	display: block;
-	width: 200px;
-	text-transform: lowercase;
+	width: 180px;
 	&_icon {
 		width: inherit;
 	}
@@ -28,8 +27,7 @@
 			box-sizing: border-box;
 			position: relative;
 			transition: color 0.4s;
-			padding-left: 7px;
-			padding-bottom: 3px;
+			padding: 5px 10px;
 
 			&:hover {
 				color: $yellow;
@@ -53,7 +51,7 @@
 			}
 		}
 		.active {
-			// color: $yellow;
+			font-weight: 400;			
 			&:hover {
 				color: $white;
 				transition: color 0.5s;
