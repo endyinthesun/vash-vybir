@@ -1,13 +1,13 @@
 import React from 'react';
 
-import {ReactComponent as Phone} from './img/phone.svg';
-import {ReactComponent as Email} from './img/email.svg';
-import {ReactComponent as Address} from './img/address.svg';
-import {ReactComponent as Schedule} from './img/schedule.svg';
+import Phone from './img/phone.svg';
+import Email from './img/email.svg';
+import Address from './img/address.svg';
+import Schedule from './img/schedule.svg';
 
-import {ReactComponent as Viber} from './img/viber.svg';
-import {ReactComponent as Facebook} from './img/facebook.svg';
-import {ReactComponent as Instagram} from './img/instagram.svg';
+import Viber from './img/viber.svg';
+import Facebook from './img/facebook.svg';
+import Instagram from './img/instagram.svg';
 
 import './footer.scss';
 

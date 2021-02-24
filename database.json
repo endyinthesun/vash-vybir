@@ -2,14 +2,80 @@
   "products": [
     {
       "id": 1,
+      "alt": "aluplast",
       "name": "Aluplast",
+      "imgName": "window.png",
       "advantages": [
-        "німецька якість",
-        "трикамерна профільна система",
-        "чудова глянцева поверхня",
-        "монтажна ширина 60мм"
+        {
+          "name": "німецька якість",
+          "id":1
+        },
+        {
+          "name": "трикамерна профільна система",
+          "id":2
+        },
+        {
+          "name": "чудова глянцева поверхня",
+          "id":3
+        },
+        {
+          "name": "монтажна ширина 60мм",
+          "id":4
+        }
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et feugiat molestie auctor. Urna quisque morbi facilisi dolor tempor tellus nisi proin. Felis pharetra, amet, massa arcu lectus facilisis. Tellus, aliquet eget cras accumsan ac at. Tempor, morbi ac vestibulum dictum viverra."
+    },
+    {
+      "id": 2,
+      "alt": "lorem",
+      "name": "lorem",
+      "imgName": "jalousie.png",
+      "advantages": [
+        {
+          "name": "Lorem ipsum dolor sit amet",
+          "id":1
+        },
+        {
+          "name": "consectetur adipiscing ",
+          "id":2
+        },
+        {
+          "name": "consectetur adipiscing ",
+          "id":3
+        }
+      ],
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et feugiat molestie auctor. Urna quisque morbi facilisi dolor tempor tellus nisi proin. Felis pharetra, amet, massa arcu lectus facilisis. Tellus, aliquet eget cras accumsan ac at. Tempor, morbi ac vestibulum dictum viverra."
+    },
+    {
+      "id": 3,
+      "alt": "door",
+      "name": "Door",
+      "imgName": "door.png",
+      "advantages": [
+        {
+          "name": "Lorem ipsum dolor sit amet",
+          "id":1
+        },
+        {
+          "name": "consectetur adipiscing ",
+          "id":2
+        },
+        {
+          "name": "sed do eiusmod tempor ",
+          "id":3
+        },
+        {
+          "name": "enim ad minim veniam",
+          "id":4
+        },
+        {
+          "name": "enim ad minim veniam",
+          "id":5
+        }
+        
       ],
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et feugiat molestie auctor. Urna quisque morbi facilisi dolor tempor tellus nisi proin. Felis pharetra, amet, massa arcu lectus facilisis. Tellus, aliquet eget cras accumsan ac at. Tempor, morbi ac vestibulum dictum viverra."
     }
+    
   ]
 }

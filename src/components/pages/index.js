@@ -1,2 +1,2 @@
-import MainPage from './mainPage';
+import MainPage from './mainPage/mainPage';
 export {MainPage};

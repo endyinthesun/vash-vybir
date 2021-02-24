@@ -1,6 +1,5 @@
 @import "./fonts";
 @import "./variables";
-@import "./main";
 
 * {
   color: $white;
@@ -8,5 +7,10 @@
   line-height: normal;
 }
 html, body {
+  position: relative;
   height: 100%;
 }
+
+
+
+@import "./main";

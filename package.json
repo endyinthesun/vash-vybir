@@ -2,30 +2,8 @@
   "name": "vash-vybir",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.9",
-    "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.7.1",
-    "node-sass": "^4.14.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.2",
-    "web-vitals": "^1.1.0"
-  },
-  "scripts": {
-    "react-start": "react-scripts start",
-    "fake-server": "json-server database.json --port 8000",
-    "start": "concurrently \"npm run fake-server\" \"npm run react-start\"",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
+  "author": "Vlad Kalenikov<vlad.kalenikov@gmail.com>",
+  "license": "ISC",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -38,8 +16,51 @@
       "last 1 safari version"
     ]
   },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.7.1",
+    "core-js": "^3.9.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.2",
+    "react-slick": "^0.28.0",
+    "slick-carousel": "^1.8.1",
+    "web-vitals": "^1.1.0"
+  },
   "devDependencies": {
+    "@babel/cli": "^7.12.17",
+    "@babel/core": "^7.12.17",
+    "@babel/preset-env": "^7.12.17",
+    "@babel/preset-react": "^7.12.13",
+    "@svgr/webpack": "^5.5.0",
+    "babel-loader": "^8.1.0",
     "concurrently": "^5.3.0",
-    "eslint-plugin-react": "^7.22.0"
+    "css-loader": "^5.0.2",
+    "eslint-plugin-react": "^7.22.0",
+    "file-loader": "^6.2.0",
+    "html-loader": "^2.1.0",
+    "html-webpack-plugin": "^5.2.0",
+    "node-sass": "^4.14.1",
+    "react-hot-loader": "^4.13.0",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.23.0",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "scripts": {
+    "webpack-serv": "webpack serve --open",
+    "react-start": "react-scripts start",
+    "json-server": "json-server database.json --port 8000",
+    "start": "concurrently \"npm run json-server\" \"npm run webpack-serv\"",
+    "build": "webpack"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   }
 }

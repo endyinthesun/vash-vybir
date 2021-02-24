@@ -1,4 +1,5 @@
-<svg width="31" height="30" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 30">
+<svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" fill="none"
+	 viewBox="0 0 31 30" xml:space="preserve">
   <defs>
     <linearGradient id='gr' x1="0" x2="0" y1="0" y2="1">
     <stop stop-color='#C54CD7' offset='0%'/>
