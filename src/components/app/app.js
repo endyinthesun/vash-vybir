@@ -1,3 +1,4 @@
+import { hot } from 'react-hot-loader/root';
 import React, { Component } from 'react';
 import ChoiceService from "../../services/choice-service";
 import "./app.scss";
@@ -5,7 +6,7 @@ import "./app.scss";
 import Sidebar from "../sidebar";
 import {MainPage} from '../pages';
 
-export default class App extends Component {
+class App extends Component {
 	choiceService = new ChoiceService();
 	state = {
 		page: "main"
@@ -28,3 +29,4 @@ export default class App extends Component {
 		);
 	}
 }
+export default hot(App);

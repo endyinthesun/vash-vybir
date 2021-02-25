@@ -1,9 +1,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const webpack = require('webpack');
 
 module.exports = {
     mode: 'development',
     target: 'web',
+    entry: ['react-hot-loader/patch', './src/'],
     module: {
         rules: [
             //Loading Babel
@@ -91,11 +91,9 @@ module.exports = {
         favicon: "public/favicon.ico",
         template: 'public/index.html'
     })
-    // new webpack.EnvironmentPlugin({
-    //     'NODE_ENV': 'production'
-    //   })
 ],
     devServer: {
         open: true,
+        hot: true
     }
 }

@@ -11,5 +11,8 @@
         ],
         "@babel/react"
     ],
-    "plugins": ["@babel/proposal-class-properties"]
+    "plugins": [
+        "react-hot-loader/babel",
+        "@babel/proposal-class-properties"
+    ]
 }
