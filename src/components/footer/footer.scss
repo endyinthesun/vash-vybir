@@ -1,14 +1,14 @@
 @import "../../scss/variables";
 
 footer {
+    margin-top: 70px;
     .footer-info {
         font-size: 13px;
-        padding-top: 30px;
     	letter-spacing: 0.15em;
         .info_block {
-            margin-bottom: 15px;
+            margin-bottom: 17px;
             &:last-child {
-            margin-bottom: 50px;
+            margin-bottom: 45px;
             }
             &_title {
                 font-weight: 400;
@@ -25,7 +25,6 @@ footer {
                 }
             }
             &_descr {
-                // font-weight: 700;
                 font-weight: 300;
                 .phone_number {
                     display: block;
@@ -34,9 +33,10 @@ footer {
             }
         }
     }
+
     .footer-social{
-        border-top: solid 1px $yellow;
-        padding: 20px 0;
+        border-top: $def-border;
+        padding: 20px 0 15px 0;
         .social_link {
             display: inline-block;
             margin-right: 30px;

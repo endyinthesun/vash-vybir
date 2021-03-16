@@ -6,25 +6,25 @@ $opacity: 0.7;
 $opacity-on-hover: 1;
 
 .wrapper {
-    min-width: 1000px;
+    max-width: 1400px;
     margin-left: 280px;
     padding: 30px 80px;
     height: 100%;
     .title {
         font-weight: 600;
-        font-size: 42px;
+        font-size: 40px;
         line-height: 60px;
         letter-spacing: 0.05em;
         text-transform: uppercase;
         text-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
     }
     .slider {
-        padding: 80px 80px 110px 80px;
+        padding: 70px 90px 100px 90px;
+        min-height: 500px;
         max-width: 1800px;
-        background: url('./BG.svg') center no-repeat;
-        background-size: 100% 100%;
+        background: url('./img/slider-bg.svg') center/100% 100% no-repeat;
         &__inner {
-            margin: 130px auto 50px auto;
+            margin: 110px auto 50px auto;
             max-width: 1300px;
 
             .slick-arrow {
@@ -50,21 +50,22 @@ $opacity-on-hover: 1;
                 width: 80%;
                 margin: 0 auto;
                 border-left: 1px solid $yellow;
-                 
+                min-height: 350px;
+                max-height: 500px;
                 .slide {
-                    position: relative;
                     display: flex;
-                    padding: 0px 60px;
+                    padding-left: 50px;
+                    min-height: 350px;
                     .left_side {
-                        width: 60%;
+                        width: 65%;
                     }
                     .right_side {
-                        width: 40%;
+                        width: 35%;
                     }
                     &_descr {
                         border-left: 1px solid $white;
                         padding-left: 50px;
-                        font-size: 22px;
+                        font-size: 20px;
                         &_title {
                             letter-spacing: 0.2em;
                             font-weight: 500;
@@ -90,22 +91,13 @@ $opacity-on-hover: 1;
                         }
                     }
                     &_btn {
-                        margin-top: 90px;
+                        margin-top: 50px;
                         margin-left: 50px;
-                        width: 210px;
-                        height: 74px;
-                        background: transparent;
-                        border: 1px solid $yellow;
-                        padding: 10px;
-                        font-weight: 300;
-                        font-size: 17px;
-                        letter-spacing: 0.1em;
-                        line-height: 24px;
+                        @include button;
                     }
                     &_img {
                         img {
                             max-width: 100%;
-                            // max-height: ;
                             float: right;
 
                         }
@@ -165,5 +157,85 @@ $opacity-on-hover: 1;
             }
         }
 
+    }
+
+    .trust {
+        margin-top: -90px;
+        padding: 90px 60px;
+        max-width: 1800px;
+        background: url("./img/trust-bg.svg") center/100% 100% no-repeat;
+        display: flex;
+        flex-direction: column;
+        .title {
+            text-align: right;
+        }
+    }
+
+    .form {
+        height: 330px;
+        width: 95%;
+        margin: -40px auto 0 auto;
+        border-radius: 10px;
+        background: url('./img/form-bg.png') center center/cover no-repeat;
+        .container {
+            margin: 0;
+            height: 100%;
+            max-width: 100%;
+            .row {
+                height: inherit;
+                .left_side, .right_side {
+                    padding: 0;
+                }
+                .right_side {
+                    .form_block {
+                        display: block;
+                        height: 100%;
+                        background: rgba(0, 0, 0, 0.6);
+                        border-radius: 0 10px 10px 0;
+                        margin-left: 45px;
+                        padding-top: 30px;
+                        &_wrapper {
+                            width: 70%;
+                            margin: 0 auto;
+                        }
+                    }
+                }
+            }
+        }
+        &_title {
+            padding: 20px 60px;
+            background: rgba(0, 0, 0, 0.6);
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 36px;
+            border-radius: 0px 5px 5px 0px;
+            margin-top: 85px;
+            letter-spacing: 0.1em;
+        }
+        &_label {
+            margin-bottom: 10px;
+            font-weight: 400;
+            font-size: 17px;
+            line-height: 22px;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid $yellow;
+        }
+        &_field {
+            width: 327px;
+            height: 34px;
+            border: 1px solid #A09FA2;
+            margin-bottom: 19px;
+            // border-color: #A09FA2;
+            border-radius: 5px;
+            color:#000;
+            &:focus {
+            border: 2px solid #678CE1;
+            outline: none;
+            }
+        }
+        &_btn {
+            @include button;
+            margin-top: 22px;
+        }
     }
 }

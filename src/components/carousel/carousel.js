@@ -1,8 +1,8 @@
 import React from 'react'
 import Slider from "react-slick";
-import PrevArrowIcon from './prevArrow.svg';
-import NextArrowIcon from './nextArrow.svg';
-import './carousel.scss';
+import PrevArrowIcon from './prev-arrow.svg';
+import NextArrowIcon from './next-arrow.svg';
+
 function Arrow ({className, onClick, arrow}) {
     return(
         <div

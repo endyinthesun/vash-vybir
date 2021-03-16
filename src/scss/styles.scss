@@ -8,9 +8,8 @@
 }
 html, body {
   position: relative;
+  overflow-x: hidden;
   height: 100%;
 }
-
-
 
 @import "./main";

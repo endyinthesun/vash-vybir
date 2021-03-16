@@ -3,12 +3,15 @@ import Carousel from '../../carousel';
 import './mainPage.scss';
 import ChoiceService from '../../../services/choice-service';
 
+import Workers from './img/trust/workers.svg'; 
 
 export default class MainPage extends Component {
     choServ = new ChoiceService();
     state = {
         sliderData: [],
-        isLoaded: false
+        isLoaded: false,
+        formName: '',
+        formNumber: '',
     };
     getSlideData = () => {
         const selectSlidesId = [1, 2, 3];
@@ -26,12 +29,24 @@ export default class MainPage extends Component {
             });
         });
     }
+
+    handleChangeName = (e) => {
+        this.setState({formName: e.target.value});
+    }
+    handleChangeNumber = (e) => {
+        this.setState({formNumber: e.target.value});
+    }
+    
+    handleSubmit = (e) => {
+        e.preventDefault();
+    }
+    
     componentDidMount() {
         this.getSlideData();
     }
     
     render() {
-        const {sliderData} = this.state;
+        const {sliderData, formName, formNumber} = this.state;
         let settings = {
             dots: false,
             infinite: true,
@@ -59,7 +74,7 @@ export default class MainPage extends Component {
                     </li>
                 );
             });
-            const src = require(`./img/${imgName}`).default;
+            const src = require(`./img/slider/${imgName}`).default;
             return (
                 <div className='slide-wrapper' key={id}>
                     <div className="slide">
@@ -95,6 +110,76 @@ export default class MainPage extends Component {
                         settings={settings}
                         slides={slides}
                     />
+                </section>
+                <section className="trust">
+                    <h2 className='title'>
+                        довірте це <br/> 
+                        професіоналам
+                    </h2>
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-6">
+                                <div className="workers">
+                                    <Workers />
+                                </div>
+                            </div>
+                            <div className="col-md-6">
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className="form">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-xl-6 left_side">
+                                <div className="form_title">
+                                    заповніть форму <br/>
+                                    і ми вам зателефонуємо
+                                </div>
+                            </div>
+                            <div className="col-xl-6 right_side">
+                                <div className="form_block">
+                                    <div className="form_block_wrapper">
+                                        <form autocomplete="on" onSubmit={this.handleSubmit}>
+                                            <label htmlFor="name" className="form_label">
+                                                Як до вас звертатися?
+                                            </label>
+                                            <input 
+                                                className="form_field"
+                                                type="text" 
+                                                id="name" 
+                                                value={formName}
+                                                onChange={this.handleChangeName}
+                                            />
+                                            <label htmlFor="number" className="form_label">
+                                                Введіть номер телефону
+                                            </label>
+                                            <input 
+                                                className="form_field"
+                                                type="text" 
+                                                id="number" 
+                                                value={formNumber}
+                                                onChange={this.handleChangeNumber}
+                                            />
+                                            {/* <input 
+                                                type="submit" 
+                                                value="отримати консультацію"
+                                                className="form_btn" 
+                                            /> */}
+                                            <button
+                                                type="submit" 
+                                                className="form_btn"
+                                            >
+                                                отримати <br/>
+                                                консультацію
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>    
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </div>
         );

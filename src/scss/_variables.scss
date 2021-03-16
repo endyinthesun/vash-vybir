@@ -3,5 +3,16 @@ $yellow: rgba(235, 172, 11, 0.9);
 $sidebar-bg: rgba(0, 0, 0, 0.5);
 $main-bg: linear-gradient(180.22deg, #366579 0.19%, #1D3820 19.85%, #412228 50.74%, #0F2027 80.41%); 
 $sidebar-bg: rgba(0, 0, 0, 0.5);
-// 
-$border: 1px solid #ebac0bc4;
+$def-border: 1px solid $yellow;
+
+@mixin button {
+    min-width: 190px;
+    min-height: 70px;
+    background: transparent;
+    border: $def-border;
+    padding: 10px;
+    font-weight: 300;
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    line-height: 24px;
+}
