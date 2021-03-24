@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
+
 import Carousel from '../../carousel';
+import Gmap from '../../gmap';
 import './mainPage.scss';
 import ChoiceService from '../../../services/choice-service';
 
 import Workers from './img/trust/workers.svg'; 
+import About from './img/about_map/about.svg';
+import Pin from './img/about_map/pin.svg';
 
 export default class MainPage extends Component {
     choServ = new ChoiceService();
@@ -47,6 +51,7 @@ export default class MainPage extends Component {
     
     render() {
         const {sliderData, formName, formNumber} = this.state;
+        //slider
         let settings = {
             dots: false,
             infinite: true,
@@ -99,6 +104,19 @@ export default class MainPage extends Component {
                 </div>
             );
         });
+
+        //google map
+        // const points = [
+        //     { lat: 50.752193002616394, lng: 25.32824208948164 },
+        //     { lat: 50.75212342686026, lng: 25.33132931194539 },
+        //     { lat: 50.75110523323243, lng: 25.32794972870966 },
+        //     { lat: 50.75107129306342, lng: 25.33145269355558 }
+        // ];
+        // let bounds = new this.props.google.maps.LatLngBounds();
+        // for (let i = 0; i < points.length; i++) {
+        //     bounds.extend(points[i]);
+        // }
+
         return (
             <div className="wrapper">
                 <section className="slider">
@@ -181,7 +199,51 @@ export default class MainPage extends Component {
                         </div>
                     </div>
                 </section>
+                
+                <section className="about_map">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-xl-6 left_side">
+                                <div className="title">
+                                    <div className="title_icon">
+                                        <About />
+                                    </div>
+                                    <div className="title_text">
+                                        <span className="first">
+                                            коротко    
+                                        </span> 
+                                        <span className="second">
+                                            про нас
+                                        </span>
+                                    </div>
+                                </div>
+                                <div className="descr">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod architecto recusandae ab incidunt amet tempore. Quos voluptatem excepturi, commodi dolorum, repudiandae, odit nulla dignissimos eius illum sequi sed blanditiis ut.
+                                    Ducimus officia natus tio iste voluptates debitis, minus fugit consectetur iusto praesentium eius impedit. Facere, quasi! Molestias distinctio iste quod unde aliquam voluptatum cupiditate, eaque molestiae aperiam iure perferendis tempora.
+                                </div>
+                            </div>
+                            <div className="col-xl-6 right_side">
+                                <div className="title">
+                                    <div className="title_icon">
+                                        <Pin />
+                                    </div>
+                                    <div className="title_text">
+                                        <span className="first">
+                                            наша    
+                                        </span> 
+                                        <span className="second">
+                                            адреса
+                                        </span>
+                                    </div>
+                                </div>
+                                <div className="map">
+                                    <Gmap />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         );
-};
+    };
 }

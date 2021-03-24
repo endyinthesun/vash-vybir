@@ -10,9 +10,13 @@ $opacity-on-hover: 1;
     margin-left: 280px;
     padding: 30px 80px;
     height: 100%;
+    .container {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
     .title {
         font-weight: 600;
-        font-size: 40px;
+        font-size: 37px;
         line-height: 60px;
         letter-spacing: 0.05em;
         text-transform: uppercase;
@@ -177,8 +181,12 @@ $opacity-on-hover: 1;
         margin: -40px auto 0 auto;
         border-radius: 10px;
         background: url('./img/form-bg.png') center center/cover no-repeat;
+        z-index: 10;
+        position: relative;
         .container {
             margin: 0;
+            padding-right: 15px;
+            padding-left: 15px;
             height: 100%;
             max-width: 100%;
             .row {
@@ -188,6 +196,7 @@ $opacity-on-hover: 1;
                 }
                 .right_side {
                     .form_block {
+                        backdrop-filter: blur(3px);
                         display: block;
                         height: 100%;
                         background: rgba(0, 0, 0, 0.6);
@@ -203,6 +212,7 @@ $opacity-on-hover: 1;
             }
         }
         &_title {
+            backdrop-filter: blur(3px);
             padding: 20px 60px;
             background: rgba(0, 0, 0, 0.6);
             font-weight: 500;
@@ -215,7 +225,7 @@ $opacity-on-hover: 1;
         &_label {
             margin-bottom: 10px;
             font-weight: 400;
-            font-size: 17px;
+            font-size: 16px;
             line-height: 22px;
             letter-spacing: 0.05em;
             border-bottom: 1px solid $yellow;
@@ -236,6 +246,64 @@ $opacity-on-hover: 1;
         &_btn {
             @include button;
             margin-top: 22px;
+        }
+    }
+
+    .about_map {
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        border-radius: 20px;
+        margin-top: -40px;
+        padding: 100px 0;
+        .container { 
+            padding: 0;
+            .row {
+                .left_side, .right_side {
+                    padding: 0 50px;
+                }
+                .left_side {
+                    border-right: 2px solid $yellow;
+                    .descr {
+                        font-size: 18px;
+                        line-height: 29px;
+                        letter-spacing: 0.1em;
+                    }
+                }
+                .right_side {
+                    .map {
+                        width: 400px;
+                        height: 350px;
+                        // margin: 0 auto;
+                        position: relative;
+                    }
+                }
+                .title { 
+                    height: 100px;
+                    display: flex;
+                    margin-bottom: 45px;
+                    &_icon, &_text {
+                        height: inherit;
+                    }
+                    &_text {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        margin-left: 30px;
+                        font-family: Montserrat;
+                        font-weight: 600;
+                        font-size: 37px;
+                        letter-spacing: normal;
+                        line-height: 51px;
+                        text-transform: uppercase;
+                        text-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+                        .first { 
+                            color: $white;
+                        }
+                        .second {
+                            color: $yellow;
+                        }
+                    }
+                }
+            }
         }
     }
 }
