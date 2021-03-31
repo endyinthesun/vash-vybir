@@ -6,8 +6,8 @@ $sidebar-bg: rgba(0, 0, 0, 0.5);
 $def-border: 1px solid $yellow;
 
 @mixin button {
-    min-width: 190px;
-    min-height: 70px;
+    width: 190px;
+    height: 70px;
     background: transparent;
     border: $def-border;
     padding: 10px;
@@ -15,4 +15,13 @@ $def-border: 1px solid $yellow;
     font-size: 15px;
     letter-spacing: 0.1em;
     line-height: 24px;
+    outline:1px solid #0000;
+    outline-offset:60px;
+    transition:0s;
+    &:hover {
+        outline-offset:-1px;
+        border-color:#0000;
+        outline-color:$yellow;
+        transition:0.5s;
+      }
 }
