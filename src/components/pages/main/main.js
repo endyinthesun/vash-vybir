@@ -2,14 +2,15 @@ import React, { Component } from 'react'
 
 import Carousel from '../../carousel';
 import Gmap from '../../gmap';
-import './mainPage.scss';
+import './main.scss';
 import ChoiceService from '../../../services/choice-service';
 
-import Workers from './img/trust/workers.svg'; 
+import Workers from './img/trust/workers.png'; 
 import About from './img/about_map/about.svg';
 import Pin from './img/about_map/pin.svg';
+import SliderBG from './img/slider-bg.svg';
 
-export default class MainPage extends Component {
+export default class Main extends Component {
     choServ = new ChoiceService();
     state = {
         sliderData: [],
@@ -105,20 +106,8 @@ export default class MainPage extends Component {
             );
         });
 
-        //google map
-        // const points = [
-        //     { lat: 50.752193002616394, lng: 25.32824208948164 },
-        //     { lat: 50.75212342686026, lng: 25.33132931194539 },
-        //     { lat: 50.75110523323243, lng: 25.32794972870966 },
-        //     { lat: 50.75107129306342, lng: 25.33145269355558 }
-        // ];
-        // let bounds = new this.props.google.maps.LatLngBounds();
-        // for (let i = 0; i < points.length; i++) {
-        //     bounds.extend(points[i]);
-        // }
-
         return (
-            <div className="wrapper">
+            <>
                 <section className="slider">
                     <h2 className='title'>
                         Обирай найкраще <br/>
@@ -128,6 +117,8 @@ export default class MainPage extends Component {
                         settings={settings}
                         slides={slides}
                     />
+                    {/* <SliderBG /> */}
+                    
                 </section>
                 <section className="trust">
                     <h2 className='title'>
@@ -138,7 +129,7 @@ export default class MainPage extends Component {
                         <div className="row">
                             <div className="col-md-6">
                                 <div className="workers">
-                                    <Workers />
+                                    <img src={Workers} alt="workers"/>
                                 </div>
                             </div>
                             <div className="col-md-6">
@@ -243,7 +234,7 @@ export default class MainPage extends Component {
                         </div>
                     </div>
                 </section>
-            </div>
+            </>
         );
     };
 }

@@ -6,6 +6,9 @@
 	font-family: Montserrat;
   line-height: normal;
 }
+html {
+  scroll-behavior: smooth;
+}
 html, body {
   position: relative;
   overflow-x: hidden;

@@ -1,10 +1,11 @@
 import { hot } from 'react-hot-loader/root';
 import React, { Component } from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import ChoiceService from "../../services/choice-service";
 import "./app.scss";
 
 import Sidebar from "../sidebar";
-import {MainPage} from '../pages';
+import {Main, Gallery} from '../pages';
 
 class App extends Component {
 	choiceService = new ChoiceService();
@@ -19,13 +20,18 @@ class App extends Component {
 	render() {
 		const {page} = this.state;
 		return (
-			<>
+			<Router>
 				<Sidebar 
 					onChangePage={this.onChangePage}
 					page={page}
 				/> 
-				<MainPage />
-			</>
+				<div className="content">
+					<div className="wrapper">
+						<Route path='/main' component={Main}/>
+						<Route path='/gallery' component={Gallery}/>
+					</div>	
+				</div>
+			</Router>
 		);
 	}
 }

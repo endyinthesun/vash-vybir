@@ -1,6 +1,7 @@
 import React from 'react';
 import "./header.scss";
 import Logo from "./logo.svg"
+import {Link} from 'react-router-dom';
 
  function Header({onChangePage, page}) {
 
@@ -21,7 +22,9 @@ import Logo from "./logo.svg"
 				<div className={clazz}>
 					<span onClick={() => onChangePage(key)}
 					>
-						{label}
+						<Link to={`/${key}`}>
+							{label}
+						</Link>	
 					</span>
 				</div>
 

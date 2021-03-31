@@ -21,6 +21,7 @@
             li {
                 margin-top: 10px;
                 cursor: pointer;
+                user-select: none;
                 .nav_link {
                     display: inline-block;
                     box-sizing: border-box;

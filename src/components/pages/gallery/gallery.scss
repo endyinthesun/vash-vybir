@@ -1,0 +1,37 @@
+@import "~react-image-gallery/styles/scss/image-gallery.scss";
+@import '../../../scss/variables';
+
+
+.image-gallery {
+    .image-gallery-content {
+        .image-gallery-slide {
+            div {
+                position: relative;
+                display: inline-block;
+                .image-gallery-image {
+                    // max-height: calc(100vh - 160px);
+                    height: calc(100vh - 160px);
+                    width: auto;
+                }
+            }
+        }
+        .image-gallery-icon {
+            .image-gallery-svg {
+                opacity: 0.7;
+                transform: none;
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+        .image-gallery-thumbnails {
+            padding-top: 20px;
+            .image-gallery-thumbnail {
+                &.active, &:hover, &:focus {
+                    border-color: $yellow;
+                }
+            }
+        }
+        
+    }
+}
