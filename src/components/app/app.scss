@@ -2,6 +2,7 @@
     padding-left: 280px;    
       .wrapper {
         padding: 40px 80px 20px 80px;
-        height: 100%;
+        min-height: 100vh;
+        position: relative;
       }
     }

@@ -4,10 +4,7 @@ import googleMapStyles from './GoogleMapStyles';
 import './gmap.scss';
 
 export default class Gmap extends Component {
-    onLoad = (m) => {
-        console.log('marker', m);
-    }
-
+   
   render() {
     const options = {
         zoom: 17,
@@ -29,9 +26,9 @@ export default class Gmap extends Component {
                 <GoogleMap
                     mapContainerClassName="gmap"
                     options={options}
+                    onLoad={this.props.onLoadMap}
                 >
                     <Marker
-                    onLoad={this.onLoad}
                     position={{
                         lat: 50.7516779698738, 
                         lng: 25.329030658899786
