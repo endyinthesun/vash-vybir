@@ -10,9 +10,9 @@ import {Link} from 'react-router-dom';
 		btnsArr.push({label, key});
 	};
 
-	createBtnArr('Головна', 'main');
-	createBtnArr('Товари та послуги', 'products');
-	createBtnArr('Галерея робіт', 'gallery');
+	createBtnArr('Головна', '/');
+	createBtnArr('Товари та послуги', '/products');
+	createBtnArr('Галерея робіт', '/gallery');
 
 	const btns = btnsArr.map(({key, label}) => {
 		const Active = (page === key);
@@ -22,7 +22,7 @@ import {Link} from 'react-router-dom';
 				<div className={clazz}>
 					<span onClick={() => onChangePage(key)}
 					>
-						<Link to={`/${key}`}>
+						<Link to={key}>
 							{label}
 						</Link>	
 					</span>

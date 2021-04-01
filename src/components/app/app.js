@@ -1,6 +1,6 @@
 import { hot } from 'react-hot-loader/root';
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import ChoiceService from "../../services/choice-service";
 import "./app.scss";
 
@@ -10,7 +10,7 @@ import {Main, Gallery} from '../pages';
 class App extends Component {
 	choiceService = new ChoiceService();
 	state = {
-		page: "main"
+		page: "/",
 	};
 
 	onChangePage = (page) => {
@@ -18,7 +18,7 @@ class App extends Component {
 	}
 		
 	render() {
-		const {page} = this.state;
+		const {page} = this.state;	
 		return (
 			<Router>
 				<Sidebar 
@@ -27,9 +27,11 @@ class App extends Component {
 				/> 
 				<div className="content">
 					<div className="wrapper">
-						<Route path='/main' component={Main}/>
-						<Route path='/gallery' component={Gallery}/>
-					</div>	
+						<Switch>
+							<Route path='/' exact component={Main}/>
+							<Route path='/gallery' component={Gallery}/>
+						</Switch>
+					</div>
 				</div>
 			</Router>
 		);
