@@ -44,8 +44,8 @@ export default class Carousel extends Component {
                                 </ul>
                             </div>
                             <button className="slide_btn">
-                                дізнатися <br/> 
-                                більше
+                                    дізнатися <br/> 
+                                    більше
                             </button>
                         </div>
                         <div className="right_side">

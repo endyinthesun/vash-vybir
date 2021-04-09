@@ -1,12 +1,10 @@
 @import '../../../scss/variables';
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
 
 $dot-character: "\2022";
 $dot-size: 20px;
-$opacity: 0.7;
-$opacity-on-hover: 1;
 
 .wrapper {
-
     .container {
         padding-left: 50px;
         padding-right: 50px;
@@ -204,6 +202,11 @@ $opacity-on-hover: 1;
                         margin-left: 45px;
                         padding-top: 30px;
                         &_wrapper {
+                            &_successful {
+                                display: block;
+                                margin-top: 15px;
+                                font-size: 18px;
+                            }
                             width: 70%;
                             margin: 0 auto;
                         }
@@ -231,21 +234,126 @@ $opacity-on-hover: 1;
             border-bottom: 1px solid $yellow;
         }
         &_field {
-            width: 327px;
-            height: 34px;
-            border: 1px solid #A09FA2;
-            margin-bottom: 19px;
-            // border-color: #A09FA2;
-            border-radius: 5px;
-            color:#000;
-            &:focus {
-            border: 2px solid #678CE1;
-            outline: none;
+            margin-bottom: 25px;
+            letter-spacing: 0.05em;
+            display: inline-block;
+            position: relative;
+            color: $gray;
+            &_area {
+                position: relative;
+                width: 327px;
+                height: 34px;
+                border: 1px solid $gray;
+                transition: border-color 1s, color 0.3s;
+                border-radius: 5px;
+                color: $black-secondary;
+                font-weight: 500;
+            }
+            &.focus {
+                color: $black;
+                .form_field_area {
+                    transition: border-color 0.5s, color 0.3s;
+                    color: $black;
+                    border: 1px solid $blue;
+                    outline: none;
+                }
+            &#number_wrapper {
+                &::after {
+                    font-weight: 500;
+                }
+            }
+            }
+            &#name_wrapper {
+
+                .form_field_area {
+                    padding-left: 43px;
+
+                }
+                &::before {
+                    transition: color 0.3s;
+                    content: '\f2bb';
+                    z-index: 1;
+                    font-family: "Font Awesome 5 Free"; 
+                    font-weight: 900;
+                    left: 12px;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                &::after {
+                    transition: all 1s;
+                        opacity: 0;
+                        content: 'забагато символів';
+                        font-size: 13px;
+                        font-weight: 600;
+                        color: $red;
+                        left: 0;
+                        top: 40px;
+                        position: absolute;
+
+                }
+            }
+            &#number_wrapper {
+                .form_field_area {
+                    padding-left: 70px;
+                    transition: color 0.3s;
+                }
+                &::before {
+                    transition: color 0.3s;
+                    content: '\f879 ';
+                    z-index: 1;
+                    font-family: "Font Awesome 5 Free"; 
+                    font-weight: 900;
+                    left: 12px;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+                &::after {
+                    transition: color 0.3s;
+                    content: '+38';
+                    left: 36px;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+            &.error {
+                .form_field_area {
+                    border: 2px solid $red;
+                    transition: border-color 0.5s;
+                }
+                &#name_wrapper {
+
+                    &::after {
+                        transition: all 1s;
+                        opacity: 1;
+                        content: 'забагато символів';
+                        font-size: 13px;
+                        font-weight: 600;
+                        color: $red;
+                        left: 0;
+                        top: 40px;
+                        position: absolute;
+                    }
+                }
+                &#number_wrapper {
+                    &::after {
+                        content: 'fffffuck me';
+                        font-size: 13px;
+                        font-weight: 600;
+                        color: $red;
+                        left: 0;
+                        top: 40px;
+                        position: absolute;
+                    }
+                }
+                
             }
         }
         &_btn {
             @include button;
-            margin-top: 22px;
+            // margin-top: 22px;
         }
     }
 

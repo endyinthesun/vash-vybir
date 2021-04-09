@@ -3,6 +3,7 @@ import ChoiceService from '../../../services/choice-service';
 
 import Carousel from '../../carousel';
 import Gmap from '../../gmap';
+import ContactForm from '../../contact-form'
 import Spinner from '../../spinner';
 import './main.scss';
 
@@ -13,23 +14,11 @@ import Pin from './img/about_map/pin.svg';
 export default class Main extends Component {
     choServ = new ChoiceService();
     state = {
-        formName: '',
-        formNumber: '',
         loadingSlider: true,
         loadingMap: true,
         sliderData: []
     };
  
-    handleChangeName = (e) => {
-        this.setState({formName: e.target.value});
-    }
-    handleChangeNumber = (e) => {
-        this.setState({formNumber: e.target.value});
-    }
-    handleSubmit = (e) => {
-        e.preventDefault();
-    }
-    
     getSlideData = () => {
         const selectSlidesId = [1, 2, 3];
         let request = selectSlidesId.map((id) => {
@@ -59,8 +48,7 @@ export default class Main extends Component {
     }
 
     render() {
-        const {formName, formNumber, loadingSlider, loadingMap, sliderData} = this.state;
-
+        const { loadingSlider, loadingMap, sliderData} = this.state;
         if(loadingSlider && loadingMap) {
             return ( <Spinner /> );
         }
@@ -82,35 +70,7 @@ export default class Main extends Component {
                             <div className="col-xl-6 right_side">
                                 <div className="form_block">
                                     <div className="form_block_wrapper">
-                                        <form autoComplete="on" onSubmit={this.handleSubmit}>
-                                            <label htmlFor="name" className="form_label">
-                                                Як до вас звертатися?
-                                            </label>
-                                            <input 
-                                                className="form_field"
-                                                type="text" 
-                                                id="name" 
-                                                value={formName}
-                                                onChange={this.handleChangeName}
-                                            />
-                                            <label htmlFor="number" className="form_label">
-                                                Введіть номер телефону
-                                            </label>
-                                            <input 
-                                                className="form_field"
-                                                type="text" 
-                                                id="number" 
-                                                value={formNumber}
-                                                onChange={this.handleChangeNumber}
-                                            />
-                                            <button
-                                                type="submit" 
-                                                className="form_btn"
-                                            >
-                                                отримати <br/>
-                                                консультацію
-                                            </button>
-                                        </form>
+                                        <ContactForm />
                                     </div>
                                 </div>    
                             </div>
@@ -126,7 +86,6 @@ export default class Main extends Component {
 }
 
 const Slider = ({sliderData}) => {
-
     let settings = {
         dots: false,
         infinite: true,

@@ -1,5 +1,14 @@
 $white: #ffffff;
 $yellow: rgba(235, 172, 11, 0.9);
+$red: #d01d1d;
+$gray: #959497;
+$black: rgba(0, 0, 0, 0.8);
+$black-secondary: rgba(0, 0, 0, 0.6);
+$blue: #2554c2;
+
+$opacity: 0.8;
+$opacity-on-hover: 1;
+
 $sidebar-bg: rgba(0, 0, 0, 0.5);
 $main-bg: linear-gradient(180.22deg, #366579 0.19%, #1D3820 19.85%, #412228 50.74%, #0F2027 80.41%); 
 $sidebar-bg: rgba(0, 0, 0, 0.5);
@@ -8,20 +17,29 @@ $def-border: 1px solid $yellow;
 @mixin button {
     width: 190px;
     height: 70px;
+    padding: 0;
     background: transparent;
     border: $def-border;
-    padding: 10px;
     font-weight: 300;
     font-size: 15px;
     letter-spacing: 0.1em;
     line-height: 24px;
-    outline:1px solid #0000;
-    outline-offset:60px;
+    outline:1px solid $yellow;
+    outline-offset: -1px;
     transition:0s;
     &:hover {
-        outline-offset:-1px;
-        border-color:#0000;
-        outline-color:$yellow;
-        transition:0.5s;
+        outline-offset:30px;
+        outline-color:rgba(0, 0, 0, 0);
+        transition:0.6s;
       }
+    
+    @media only screen and (max-width: 1824px){
+        width: 180px;
+        height: 62px;
+        font-size: 14px;
+        line-height: 20px;
+        &_text {
+            padding: 7px;
+        }
+    }
 }

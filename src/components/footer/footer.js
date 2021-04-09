@@ -23,7 +23,6 @@ function Footer() {
 					<div className="info_block_descr">
 						<a href="tel:+380634130701" className="phone_number">(063) 413 - 07 - 01</a>
 						<a href="tel:+380634130701" className="phone_number">(063) 413 - 07 - 01</a>
-						<a href="tel:+380634130701" className="phone_number">(063) 413 - 07 - 01</a>
 					</div>
 				</div>
 
