@@ -36,4 +36,10 @@
         background-color: $yellow; 
         background-clip: content-box;
     }
+
+    //Media-queries
+    @media only screen and (max-width: 1824px) {
+        padding-left: 30px;
+        width: 250px;
+    }
 }

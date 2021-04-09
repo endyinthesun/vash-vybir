@@ -78,4 +78,33 @@ footer {
             }
         }
     }
+
+    // Media-queries
+    @media only screen and (max-width: 1824px) {
+        .footer-info {
+            font-size: 12px;
+            .info_block {
+                &_title {
+                    font-weight: 300;
+                    margin-bottom: 8px;
+                    &_icon {
+                        width: 20px;
+                        margin-right: 12px;
+                    }
+                }
+                &:last-child {
+                    margin-bottom: 30px;
+                }
+            }
+        }
+        .footer-social{
+            border-top: solid 1px $yellow;
+            .social_link {
+                margin-right: 24px;
+                &_icon {
+                    width: 30px;
+                }
+            }
+        }
+    }
 }

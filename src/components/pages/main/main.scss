@@ -415,4 +415,118 @@ $dot-size: 20px;
         }
     }
 
+    // Media-queries
+    @media only screen and (max-width: 1824px) {
+        .title {
+            font-size: 30px;
+            line-height: 45px;
+        }
+        .slider {
+            background: url('./img/slider-bg-1200.svg') center/100% 100% no-repeat;
+            &__inner {
+                margin-top: 80px;
+                .slick-arrow {
+                    width: 35px;
+                    &.slick-prev {
+                        left: -30px;
+                    }        
+                    &.slick-next {
+                        right: -30px;
+                    }
+                }
+                
+                .slick-list {
+                    min-height: 300px;
+                    .slide {
+                        padding-left: 30px;
+                        min-height: 300px;
+                        max-height: 450px;
+                        &_descr {
+                            padding-left: 30px;
+                            font-size: 16px;
+                            &_title {
+                                line-height: 20px;
+                            }
+                            &_list {
+                                margin-top: 16px;
+                                li {
+                                    margin-top: 7px;
+                                    padding-left: 26px;
+                                    text-indent: -24px;
+                                    // padding-left: 33px;
+                                    // text-indent: -32px;
+                                }
+                            }
+                        }
+                        &_btn {
+                            margin-left: 32px;
+                        }
+                    }
+                }
+            }
+            
+        }
+        .trust {
+            background:url('./img/trust-bg-1200.svg') center/100% 100% no-repeat;
+        }
+        .form {
+            &_field {
+                &_area {
+                    width: 280px;
+                }
+            }
+        }
+        .about_map {
+            .container { 
+                    .row {
+                        .left_side {
+                            .descr {
+                                font-size: 16px;
+                            }
+                        }
+                        .right_side {
+                            .map {
+                                width: 350px;
+                                height: 300px;
+                            }
+                        }
+                    }
+                }
+            }
+    }
+    
+    @media only screen  and (max-width: 1357px) {
+        .form {
+            &_field {
+                &_area {
+                    width: 240px;
+                }
+            }
+            .container {
+                .row {
+                    .right_side {
+                        .form_block {
+                            &_wrapper {
+                                width: 80%;
+                            }
+                        }
+                    }
+                }
+            }
+            &_title {
+                font-size: 22px;
+                padding: 20px 40px;
+            }
+        }
+        .about_map {
+            .container { 
+                    .right_side {
+                        .map {
+                            width: 350px;
+                            height: 300px;
+                        }
+                    }
+                }
+            }
+    }
 }

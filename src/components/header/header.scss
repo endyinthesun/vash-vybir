@@ -73,4 +73,19 @@
             }
         }
     }
+
+    // Media-queries
+    @media only screen and (max-width: 1824px) {
+        font-size: 16px;
+        &_logo {
+            width: 160px;
+        }
+        &_nav {
+            ul {
+                li {
+                    margin-top: 8px;
+                }
+            }
+        }
+    }
 }
