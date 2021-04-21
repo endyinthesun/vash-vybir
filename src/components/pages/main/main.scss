@@ -174,7 +174,7 @@ $dot-size: 20px;
     }
 
     .form {
-        height: 330px;
+        height: 365px;
         width: 95%;
         margin: -40px auto 0 auto;
         border-radius: 10px;
@@ -194,21 +194,64 @@ $dot-size: 20px;
                 }
                 .right_side {
                     .form_block {
-                        backdrop-filter: blur(3px);
                         display: block;
                         height: 100%;
-                        background: rgba(0, 0, 0, 0.6);
+                        background: $form-bg;
                         border-radius: 0 10px 10px 0;
                         margin-left: 45px;
-                        padding-top: 30px;
+                        padding: 24px 0px;
                         &_wrapper {
-                            &_successful {
+                            width: 70%;
+                            height: inherit;
+                            margin: 0 auto;
+                            &_successful, &_error {
                                 display: block;
                                 margin-top: 15px;
                                 font-size: 18px;
                             }
-                            width: 70%;
-                            margin: 0 auto;
+                            &_error {
+                                color: $red;
+                            }
+                            form {
+                                height: inherit;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                .fields {
+                                    position: relative;
+                                    transition: all 1s;
+                                    border: 1px solid $yellow;
+                                    padding: 20px 0px 35px 20px;
+                                    border-radius: 4px;
+                                    background-color: #a7a7a90d;
+                                    &::after {
+                                        transition: all 0.6s;
+                                        opacity: 0;
+                                        content: 'заповніть всі поля';
+                                        text-transform: uppercase;
+                                        font-size: 14px;
+                                        font-weight: 600;
+                                        color: $red;
+                                        bottom: 5px;
+                                        position: absolute;
+                                    }
+                                }
+                                .fields:focus-within {
+                                    transition: all 0.4s;
+                                    backdrop-filter: blur(4px);
+                                }
+                                &.error {
+                                    .fields {
+                                        transition: all 1s;
+                                        border-color: $red;
+                                        &::after {
+                                            transition: all 1s;
+                                            opacity: 1;
+                                            position: absolute;
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -217,7 +260,7 @@ $dot-size: 20px;
         &_title {
             backdrop-filter: blur(3px);
             padding: 20px 60px;
-            background: rgba(0, 0, 0, 0.6);
+            background: $form-bg;
             font-weight: 500;
             font-size: 24px;
             line-height: 36px;
@@ -234,40 +277,55 @@ $dot-size: 20px;
             border-bottom: 1px solid $yellow;
         }
         &_field {
-            margin-bottom: 25px;
             letter-spacing: 0.05em;
-            display: inline-block;
+            display: flex;
+            align-items: center;
             position: relative;
             color: $gray;
-            &_area {
+            background-color: $white;
+            border: 2px solid $gray;
+            transition: border-color 1s, color 0.3s;
+            border-radius: 5px;
+            max-width: 327px;
+            height: 34px;
+            &::before {
+                transition: color 0.3s;
+                color: $gray;
+            }
+            input {
+                transition: color 0.3s;
+                flex-grow: 1;
+                width: 100%;
+                border: none;
+                outline: none;
                 position: relative;
-                width: 327px;
-                height: 34px;
-                border: 1px solid $gray;
-                transition: border-color 1s, color 0.3s;
-                border-radius: 5px;
                 color: $black-secondary;
                 font-weight: 500;
             }
-            &.focus {
+            &:focus-within {
                 color: $black;
-                .form_field_area {
-                    transition: border-color 0.5s, color 0.3s;
+                transition: border-color 0.5s, color 0.3s;
+                border: 2px solid $blue;
+                outline: none;
+                &::before {
+                    transition: color 0.3s;
                     color: $black;
-                    border: 1px solid $blue;
-                    outline: none;
                 }
-            &#number_wrapper {
-                &::after {
-                    font-weight: 500;
+                input {
+                    color: $black;
+                    transition: color 0.3s;
                 }
-            }
+                &#number_wrapper {
+                    .prefix {
+                        color: $black;
+                        transition: color 0.3s;
+                    }
+                }
             }
             &#name_wrapper {
-
-                .form_field_area {
+                margin-bottom: 30px;
+                input {
                     padding-left: 43px;
-
                 }
                 &::before {
                     transition: color 0.3s;
@@ -281,25 +339,25 @@ $dot-size: 20px;
                     transform: translateY(-50%);
                 }
                 &::after {
-                    transition: all 1s;
-                        opacity: 0;
-                        content: 'забагато символів';
-                        font-size: 13px;
-                        font-weight: 600;
-                        color: $red;
-                        left: 0;
-                        top: 40px;
-                        position: absolute;
-
+                    transition: all 0.5s;
+                    opacity: 0;
+                    content: 'забагато символів';
+                    font-size: 12px;
+                    font-weight: 600;
+                    color: $red;
+                    left: 0;
+                    bottom: -23px;
+                    position: absolute;
                 }
             }
             &#number_wrapper {
-                .form_field_area {
-                    padding-left: 70px;
+                .prefix {
+                    color: $black-secondary;
+                    margin-left: 38px;
                     transition: color 0.3s;
+                    font-weight: 500;
                 }
                 &::before {
-                    transition: color 0.3s;
                     content: '\f879 ';
                     z-index: 1;
                     font-family: "Font Awesome 5 Free"; 
@@ -309,46 +367,17 @@ $dot-size: 20px;
                     top: 50%;
                     transform: translateY(-50%);
                 }
-                &::after {
-                    transition: color 0.3s;
-                    content: '+38';
-                    left: 36px;
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                }
             }
             &.error {
-                .form_field_area {
-                    border: 2px solid $red;
+                border-color: $red;
                     transition: border-color 0.5s;
-                }
                 &#name_wrapper {
-
                     &::after {
-                        transition: all 1s;
+                        transition: all 0.5s;
                         opacity: 1;
-                        content: 'забагато символів';
-                        font-size: 13px;
-                        font-weight: 600;
                         color: $red;
-                        left: 0;
-                        top: 40px;
-                        position: absolute;
                     }
                 }
-                &#number_wrapper {
-                    &::after {
-                        content: 'fffffuck me';
-                        font-size: 13px;
-                        font-weight: 600;
-                        color: $red;
-                        left: 0;
-                        top: 40px;
-                        position: absolute;
-                    }
-                }
-                
             }
         }
         &_btn {

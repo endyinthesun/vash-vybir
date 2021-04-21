@@ -2,7 +2,7 @@ $white: #ffffff;
 $yellow: rgba(235, 172, 11, 0.9);
 $red: #d01d1d;
 $gray: #959497;
-$black: rgba(0, 0, 0, 0.8);
+$black: rgba(0, 0, 0, 0.9);
 $black-secondary: rgba(0, 0, 0, 0.6);
 $blue: #2554c2;
 
@@ -12,7 +12,7 @@ $opacity-on-hover: 1;
 $sidebar-bg: rgba(0, 0, 0, 0.5);
 $main-bg: linear-gradient(180.22deg, #366579 0.19%, #1D3820 19.85%, #412228 50.74%, #0F2027 80.41%); 
 $sidebar-bg: rgba(0, 0, 0, 0.5);
-$def-border: 1px solid $yellow;
+$form-bg: rgba(0, 0, 0, 0.7);
 
 @mixin button {
     width: 190px;
