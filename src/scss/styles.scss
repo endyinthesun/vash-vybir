@@ -1,18 +1,63 @@
 @import "./fonts";
 @import "./variables";
+@import './mixin';
 
 * {
   color: $white;
 	font-family: Montserrat;
   line-height: normal;
 }
-html {
-  scroll-behavior: smooth;
-}
+// html {
+//   scroll-behavior: smooth;
+// }
 html, body {
   position: relative;
-  overflow-x: hidden;
-  height: 100%;
+  scroll-behavior: smooth;
+  // overflow-x: hidden;
+  // width: 100vw;
+  // min-height: 100vh;
 }
 
-@import "./main";
+body {
+  position: relative;
+  // height: 100%;
+  &::before {
+    position: absolute;
+    content: "";
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba($color: $black, $alpha: 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s ;
+  }
+  &.sidebar-open {
+    // overflow: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    &::before {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  //$width, $track-bg, $thumb-bg, $thumb-border-sz, $thumb-bg-hover
+  // @include scrollbar(10px, rgba(110, 110, 110, 0.651), rgba(0, 0, 0, 0.6), 2px, rgba(0, 0, 0, 0.75));
+    
+  }
+
+#root {
+  min-height: 100vh;
+  position: relative;
+}
+a {
+  color: $white;
+  &:hover {
+    color: #ffff;
+    text-decoration: none;
+  }
+}

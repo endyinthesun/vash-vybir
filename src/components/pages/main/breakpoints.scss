@@ -1,0 +1,317 @@
+@import '../../../scss/breakpoints';
+
+// max-width: 599px
+@include mobile-only {
+
+}
+
+//min-width: 600px
+@include tablet-portrait-up {
+
+}
+
+//min-width: 900px
+@include tablet-landscape-up {
+    .slider, .trust, .about_map {
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+    }
+    .title_text, .trust::before {
+        font-size: 2rem;
+    }
+    .slider-wrapper {
+        .slider {
+            padding-top: 2.5em;
+            &__inner {
+                margin-top: 4.5em;
+                .slick-arrow {
+                    width: 40px;
+                    height: 80px;
+                }
+                .slick-list{
+                    min-height: 430px;
+                    max-height: 700px;
+                    .slide {
+                        padding-left: 0;
+                        min-height: 450px;
+                        &_descr {
+                            border: none;
+                            font-size: 1rem;
+                            padding-left: 2.2em;
+                            &_title {
+                                letter-spacing: 0.15em;
+                            }
+                            &_list {
+                                letter-spacing: 0.05em;
+                            }
+                        }
+                        &_btn {
+                            margin: 2em 0 2em 2em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .trust-wrapper {
+        .trust {
+            &::before {
+                top: -100px;
+                right: 50px;
+            }
+            padding-top: 2em;
+            padding-bottom: 3em;
+        }
+    }
+    .form {
+        height: 480px;
+        .form_group {
+            max-width: 450px;
+        }
+        &_title {
+            margin-top: 0;
+            padding: 10px 30px;
+            border-radius: 0;
+            font-size: 22px;
+            padding: 20px 40px;
+        }
+        &_field {
+            &_area {
+                width: 240px;
+            }
+        }
+        .container {
+            .row {
+                .right_side {
+                    .form_block {
+                        background: none;
+                        margin: 0;
+                        &_wrapper {
+                            width: 80%;
+                            padding: 20px;
+                            background-color: $form-bg;
+                            form {
+                                .fields {
+                                    padding: 1.5em 1.5em 2.5em 1.5em ;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .about_map {
+        padding-top: 5em;
+        padding-bottom: 3em;
+        .container { 
+                .left_side {
+                    border: none;
+                }
+                .right_side {
+                    margin-top: 2em;
+                    .map {
+                        width: 350px;
+                        height: 300px;
+                    }
+                }
+            }
+    }
+}
+
+//min-width: 1200px
+@include desktop-up {
+    max-width: 1450px;
+    .slider, .trust, .about_map {
+        padding-left: 3em;
+        padding-right: 3em;
+    }
+    .title_text, .trust::before {
+        font-size: 1.8rem;
+    }
+    .slider-wrapper {
+        .slider {
+            padding-top: 3em;
+            &__inner {
+                .slick-arrow {
+                    &.slick-prev {
+                        left: -15px;
+                    }        
+                    &.slick-next {
+                        right: -15px;
+                    }
+                }
+                
+                .slick-list {
+                    min-height: 300px;
+                    .slide {
+                        padding-left: 1.5em;
+                        min-height: 300px;
+                        max-height: 450px;
+                        &_descr {
+                            font-size: 1rem;
+                            padding-left: 2.5rem;
+                            border-left: 1px solid $white;
+                            &_title {
+                                letter-spacing: 0.15em;
+                            }
+                            &_list {
+                                letter-spacing: 0.05em;
+                            }
+                        }
+                        &_btn {
+                            margin-left: 2.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .trust-wrapper {
+        margin-top: -4em;
+        .trust {
+            padding-top: 1em;
+            padding-bottom: 5em;
+            &::before {
+                right: 56px;
+                top: -100px;
+            }
+        }
+    }
+    .form {
+        height: 390px;
+        &_title {
+            padding: 20px 40px;
+            font-size: 1.3rem;
+            border-radius: 0px 5px 5px 0px;
+            margin-top: 85px;
+        }
+        &_field {
+            &_area {
+                width: 280px;
+            }
+        }
+    }
+    .about_map-wrapper {
+        .about_map {
+            padding-top: 5em;
+            padding-bottom: 5em;
+            .container { 
+                .row {
+                    .left_side {
+                        padding-right: 2.5em;
+                        border-right: 2px solid rgba($color: $yellow, $alpha: 0.9);
+                        .descr {
+                            font-size: 1rem;
+                            line-height: 1.7em;
+                            letter-spacing: 0.05em;
+                        }
+                    }
+                    .right_side {
+                        padding-left: 2.5em;
+                    }
+                    .title { 
+                        height: 100px;
+                        margin-bottom: 45px;
+                        &_text {
+                            margin-left: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//min-width: 1800px
+@include big-desktop-up {
+    max-width: 1800px;
+    .slider, .trust, .about_map {
+        padding-left: 5em;
+        padding-right: 5em;
+    }
+    .title_text, .trust::before {
+        font-size: 2.4rem;
+    }
+    .slider-wrapper {
+        .slider {
+            padding-top: 4em;
+            &__inner {
+                .slick-arrow {
+                    width: 50px;
+                    height: 95px;
+                    &.slick-prev {
+                        left: -20px;
+                    }        
+                    &.slick-next {
+                        right: -20px;
+                    }
+                }
+                
+                .slick-list {
+                    min-height: 300px;
+                    .slide {
+                        padding-left: 1.5em;
+                        min-height: 300px;
+                        max-height: 450px;
+                        &_descr {
+                            font-size: 1.2rem;
+                            padding-left: 2.5rem;
+                            border-left: 1px solid $white;
+                            &_title {
+                                letter-spacing: 0.15em;
+                            }
+                            &_list {
+                                letter-spacing: 0.05em;
+                            }
+                        }
+                        &_btn {
+                            margin-left: 2.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .trust-wrapper {
+        margin-top: -125px;
+        .trust {
+            &::before {
+                right: 60px;
+                top: -120px;
+            }
+        }
+    }
+    .about_map-wrapper {
+        .about_map {
+            padding-top: 7em;
+            padding-bottom: 7em;
+            .container { 
+                .row {
+                    .left_side {
+                        padding-right: 4em;
+                        .descr {
+                            font-size: 1.1rem;
+                            line-height: 2em;
+                            letter-spacing: 0.1em;
+                        }
+                    }
+                    .right_side {
+                        padding-left: 4em;
+                        .map {
+                            width: 450px;
+                            height: 400px;
+                        }
+                    }
+                    .title { 
+                        height: 100px;
+                        margin-bottom: 45px;
+                        &_text {
+                            margin-left: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

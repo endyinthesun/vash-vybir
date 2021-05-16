@@ -1,23 +1,21 @@
 import React from 'react';
 
-import Phone from './img/phone.svg';
-import Email from './img/email.svg';
-import Address from './img/address.svg';
-import Schedule from './img/schedule.svg';
-
-import Viber from './img/viber.svg';
-import Facebook from './img/facebook.svg';
-import Instagram from './img/instagram.svg';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTelegramPlane, faInstagram, faFacebookF  } from '@fortawesome/free-brands-svg-icons';
+import { faPhoneAlt, faEnvelope, 
+		 faMapMarkedAlt, faClock } from '@fortawesome/free-solid-svg-icons';
 import './footer.scss';
 
 function Footer() {
 	return (
-		<footer>
+		<footer className='footer'>
 			<div className="footer-info">
 				<div className="info_block">
 					<div className="info_block_title">
-						<Phone className="info_block_title_icon"/>
+						<FontAwesomeIcon 
+							className='info_block_title_icon'
+							icon={faPhoneAlt}
+						/>
 						<span className='info_block_title_text'>телефон</span>
 					</div>
 					<div className="info_block_descr">
@@ -28,7 +26,10 @@ function Footer() {
 
 				<div className="info_block">
 					<div className="info_block_title">
-						<Email className="info_block_title_icon"/>
+						<FontAwesomeIcon 
+							className='info_block_title_icon'
+							icon={faEnvelope}
+						/>
 						<span className='info_block_title_text'>email</span>
 					</div>
 					<div className="info_block_descr">
@@ -38,7 +39,10 @@ function Footer() {
 
 				<div className="info_block">
 					<div className="info_block_title">
-						<Address className="info_block_title_icon"/>
+						<FontAwesomeIcon 
+							className='info_block_title_icon'
+							icon={faMapMarkedAlt}
+						/>
 						<span className='info_block_title_text'>адреса</span>
 					</div>
 					<div className="info_block_descr">
@@ -50,7 +54,10 @@ function Footer() {
 
 				<div className="info_block">
 					<div className="info_block_title">
-						<Schedule className="info_block_title_icon"/>
+						<FontAwesomeIcon 
+							className='info_block_title_icon'
+							icon={faClock}
+						/>
 						<span className='info_block_title_text'>графік</span>
 					</div>
 					<div className="info_block_descr">
@@ -61,13 +68,25 @@ function Footer() {
 
 			<div className="footer-social">
 				<a href="/" className="social_link">
-					<Viber id='vb' className="social_link_icon"/>
+					<FontAwesomeIcon
+						icon={faTelegramPlane}
+						id='tg'
+						className='social_link_icon'
+					/>
 				</a>
 				<a href="/" className="social_link">
-					<Facebook id='fb' className="social_link_icon"/>
+					<FontAwesomeIcon 
+						icon={faInstagram}
+						id='inst'
+						className="social_link_icon" 
+					/>	
 				</a>
 				<a href="/" className="social_link">
-					<Instagram id='inst' className="social_link_icon"/>
+					<FontAwesomeIcon 
+						icon={faFacebookF}
+						id='fb' 
+						className="social_link_icon" 
+					/>
 				</a>
 			</div>
 		</footer>

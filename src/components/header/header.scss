@@ -1,9 +1,10 @@
 @import "../../scss/variables";
+@import '../../scss/breakpoints';
 
 .header {
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 1rem;
     letter-spacing: 0.1em;
     &_logo {
         display: block;
@@ -30,7 +31,7 @@
                     padding: 5px 10px;
 
                     &:hover {
-                        color: $yellow;
+                        color: rgba($color: $yellow, $alpha: 0.9);
                         transition: color 0.25s;
                     }
                     &::after {
@@ -63,8 +64,8 @@
                     }
 
                     &::after {
-                        border-bottom-color: $yellow;
-                        border-left-color: $yellow;
+                        border-bottom-color: rgba($color: $yellow, $alpha: 0.9);
+                        border-left-color: rgba($color: $yellow, $alpha: 0.9);
                         transition:
                             height 0.25s ease-out,
                             width 0.25s ease-out 0.25s;
@@ -74,16 +75,52 @@
         }
     }
 
+
     // Media-queries
-    @media only screen and (max-width: 1824px) {
-        font-size: 16px;
+    
+    @include tablet-landscape-up {
+        // width: 227px;
+        font-size: 1rem;
+        &_logo {
+            width: 140px;
+        }
+        &_nav {
+            margin-top: 2em;
+            width: 200px;
+            ul {
+                li {
+                    margin-top: 0.5em;
+                }
+            }
+        }
+    }
+    
+    @include desktop-up {
+        font-size: 1rem;
         &_logo {
             width: 160px;
         }
         &_nav {
+            margin-top: 2em;
             ul {
                 li {
-                    margin-top: 8px;
+                    margin-top: 0.5em;
+                }
+            }
+        }
+    }
+    
+    @include big-desktop-up {
+        font-size: 1.1rem;
+        &_logo {
+            width: 180px;
+        }
+        &_nav {
+            margin-top: 2.5em;
+            width: 220px;
+            ul {
+                li {
+                    margin-top: 0.5em;
                 }
             }
         }

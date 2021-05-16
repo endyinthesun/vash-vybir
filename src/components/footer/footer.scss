@@ -1,15 +1,12 @@
 @import "../../scss/variables";
+@import '../../scss/breakpoints';
 
-footer {
-    margin-top: 70px;
-    .footer-info {
-        font-size: 13px;
+.footer {
+    margin-top: 4.5em;
+    &-info {
     	letter-spacing: 0.15em;
         .info_block {
-            margin-bottom: 17px;
-            &:last-child {
-            margin-bottom: 45px;
-            }
+            
             &_title {
                 font-weight: 400;
                 margin-bottom: 10px;
@@ -18,8 +15,8 @@ footer {
                     vertical-align: bottom;
                 }
                 &_icon {
-                    width: 22px;
-                    height: auto;
+                    height: 21px;
+                    width: auto;
                     vertical-align: bottom;
                     margin-right: 14px;
                 }
@@ -34,75 +31,116 @@ footer {
         }
     }
 
-    .footer-social{
-        border-top: 1px solid $yellow;
-        padding: 20px 0 15px 0;
+    &-social{
+        border-top: 1px solid rgba($color: $yellow, $alpha: 0.9);
+        padding: 0;
+        padding-top: 1.3em;
         .social_link {
             display: inline-block;
             margin-right: 30px;
             &:hover {
-                #vb {
+                #tg {
                     path {
-                        fill: #6F3FAA;
-                    }
-
-                }
-                #fb {
-                    path {
-                        fill: #506EAF;
-                    }
-                    rect {
-                        stroke: #506EAF;
+                        transition: all 0.3s;
+                        fill: #0088cc;
                     }
                 }
                 #inst {
-                    #rect {
-                        transition: stroke 0.25s;
-                        stroke: url(#gr);
-                    }
-                    #cirle_bg {
-                        stroke: url(#gr);
-                    }
-                    #cirle_sm {
-                        stroke: url(#gr);
-                        fill: url(#gr);
+                    path {
+                        transition: all 0.3s;
+                        fill: #c13584;
                     }
                 } 
+                #fb {
+                    path {
+                        transition: all 0.3s;
+                        fill: #4267B2;
+                    }
+                }
             }
             &_icon {
+                height: 32px;
                 width: 32px;
-                height: auto;
-                path, cirle, rect {
-                    transition: fill 0.25s, stroke 0.25s;
+                path {
+                    transition: all 0.3s;
                 }
             }
         }
     }
 
     // Media-queries
-    @media only screen and (max-width: 1824px) {
-        .footer-info {
-            font-size: 12px;
+
+    @include tablet-landscape-up {
+        font-size: 0.73rem;
+        &-info {
             .info_block {
+                margin-bottom: 1.5em;
+                &:last-child {
+                    margin-bottom: 2em;
+                }
                 &_title {
                     font-weight: 300;
-                    margin-bottom: 8px;
+                    margin-bottom: 0.8em;
                     &_icon {
-                        width: 20px;
-                        margin-right: 12px;
+                        height: 19px;
+                        width: auto;
+                        margin-right: 1em;
                     }
                 }
-                &:last-child {
-                    margin-bottom: 30px;
+                
+            }
+        }
+        &-social{
+            .social_link {
+                margin-right: 2.5em;
+                &_icon {
+                    height: 30px;
+                    width: 30px;
                 }
             }
         }
-        .footer-social{
-            border-top: solid 1px $yellow;
+    }
+    
+    @include tablet-landscape-up {
+        &-info {
+            width: 227px;
+        }
+        &-social {
+            width: 227px;
+        }
+    }
+    
+    @include desktop-up {
+        
+    }
+
+    @include big-desktop-up {
+        font-size: 0.8rem;
+        &-info {
+            
+            .info_block {
+                margin-bottom: 2em;
+                &_title {
+                    font-weight: 300;
+                    margin-bottom: 0.8em;
+                    &_icon {
+                        height: 19px;
+                        width: auto;
+                        margin-right: 1em;
+                    }
+                }
+                &:last-child {
+                    margin-bottom: 2.5em;
+                }
+            }
+        }
+        &-social{
+            padding: 1.5em 0 1em 0;
             .social_link {
-                margin-right: 24px;
+                margin-right: 2.5em;
                 &_icon {
-                    width: 30px;
+                    height: 32px;
+                    width: 32px;
                 }
             }
         }

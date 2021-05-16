@@ -1,0 +1,31 @@
+@mixin burger-line {
+    @content;
+    width: 40px;
+    height: 6px;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.527);
+    transition: all .5s ease-in-out;
+}
+
+@mixin scrollbar($width, $track-bg, $thumb-bg, $thumb-border-sz, $thumb-bg-hover) {
+    &::-webkit-scrollbar {
+        width: $width;
+      }
+  
+      &::-webkit-scrollbar-track {
+          background: $track-bg; 
+      }
+  
+      &::-webkit-scrollbar-thumb {
+          background-color: $thumb-bg;
+          background-clip: content-box;
+          border-radius: 7px;
+          border: $thumb-border-sz solid transparent;
+      }
+  
+      &::-webkit-scrollbar-thumb:hover {
+          background-color: $thumb-bg-hover;
+          background-clip: content-box;
+      }
+}

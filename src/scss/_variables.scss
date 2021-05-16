@@ -1,5 +1,5 @@
 $white: #ffffff;
-$yellow: rgba(235, 172, 11, 0.9);
+$yellow: #EBAC0B;
 $red: #d01d1d;
 $gray: #959497;
 $black: rgba(0, 0, 0, 0.9);
@@ -10,28 +10,54 @@ $opacity: 0.8;
 $opacity-on-hover: 1;
 
 $sidebar-bg: rgba(0, 0, 0, 0.5);
-$main-bg: linear-gradient(180.22deg, #366579 0.19%, #1D3820 19.85%, #412228 50.74%, #0F2027 80.41%); 
-$sidebar-bg: rgba(0, 0, 0, 0.5);
+$main-bg: linear-gradient(180deg, #366579 0.19%, #1D3820 19.85%, #412228 50.74%, #0F2027 80.41%); 
+$sidebar-bg: #010c05;
 $form-bg: rgba(0, 0, 0, 0.7);
 
 @mixin button {
     width: 190px;
     height: 70px;
+    position: relative;
     padding: 0;
     background: transparent;
-    border: $def-border;
+    border: none;
     font-weight: 300;
     font-size: 15px;
     letter-spacing: 0.1em;
     line-height: 24px;
-    outline:1px solid $yellow;
-    outline-offset: -1px;
-    transition:0s;
+    outline:1px solid rgba($color: $yellow, $alpha: 0.9);
+    transition: box-shadow 0.6s, outline 0.6s;
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        outline:1px solid $white;
+        transition:all 0.7s;
+        opacity: 0;
+        outline-offset:25px; 
+    }
+    &:focus {
+        outline:1px solid rgba($color: $yellow, $alpha: 0.9);
+    }
+    &:active {
+        outline:1px solid rgba($color: $yellow, $alpha: 0.9);
+        &::before {
+          outline-offset:0px; 
+          outline-color: $white;
+          opacity: 1;
+          transition: all 0s;
+        }
+    }
     &:hover {
-        outline-offset:30px;
-        outline-color:rgba(0, 0, 0, 0);
-        transition:0.6s;
+        transition:box-shadow 0.6s, outline 0.6s;
+        outline:1px solid $white;
+        box-shadow: inset 12.6em 0 0 0 #b6b5b023;
       }
+      
     
     @media only screen and (max-width: 1824px){
         width: 180px;

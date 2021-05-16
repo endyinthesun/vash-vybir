@@ -126,37 +126,41 @@ function ContactForm() {
     <>
       <form onSubmit={ownHandleSubmit}>
         <div className="fields">
-          <label htmlFor="name" className="form_label">
-              Як до вас звертатися?
-          </label>
-          <div className="form_field" id="name_wrapper">
-            <input 
-                  placeholder={'Ім\'я та прізвище'}
-                  type="text" 
-                  id="name" 
-                  name="name"
-                  spellCheck="false"
-                  value={name}
-                  onChange={onChangeName}
-              />
+          <div className='form_group'>
+            <label htmlFor="name" className="form_label">
+                Як до вас звертатися?
+            </label>
+            <div className="form_field" id="name_wrapper">
+              <input 
+                    placeholder={'Ім\'я та прізвище'}
+                    type="text" 
+                    id="name" 
+                    name="name"
+                    spellCheck="false"
+                    value={name}
+                    onChange={onChangeName}
+                />
+            </div>
           </div>
-          <label htmlFor="number" className="form_label">
-              Введіть номер телефону
-          </label>
-          <div className="form_field" id="number_wrapper">
-            <span className="prefix">+38</span>
-            <Input 
-                placeholder='(XXX)-XXX-XX-XX'
-                mask='(000)-`000-`00-`00'
-                radix="."
-                type="tel"
-                inputMode='tel' 
-                id="number" 
-                name="number"
-                spellCheck="false"
-                value={number}
-                onChange={onChangeNumber}
-            />
+          <div className="form_group">
+            <label htmlFor="number" className="form_label">
+                Введіть номер телефону
+            </label>
+            <div className="form_field" id="number_wrapper">
+              <span className="prefix">+38</span>
+              <Input 
+                  placeholder='(XXX)-XXX-XX-XX'
+                  mask='(000)-`000-`00-`00'
+                  radix="."
+                  type="tel"
+                  inputMode='tel' 
+                  id="number" 
+                  name="number"
+                  spellCheck="false"
+                  value={number}
+                  onChange={onChangeNumber}
+              />
+            </div>
           </div>
         </div>
       
