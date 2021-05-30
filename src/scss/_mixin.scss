@@ -1,3 +1,5 @@
+@import '../scss/breakpoints';
+
 @mixin burger-line {
     @content;
     width: 40px;
@@ -6,6 +8,85 @@
     border-radius: 2px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.527);
     transition: all .5s ease-in-out;
+}
+
+@mixin button {
+    // width: 190px;
+    // height: 70px;
+    position: relative;
+    padding: 0;
+    background: transparent;
+    border: none;
+    font-weight: 300;
+    // font-size: 15px;
+    letter-spacing: 0.1em;
+    // line-height: 24px;
+    outline:1px solid rgba($color: $yellow, $alpha: 0.9);
+    transition: box-shadow 0.6s, outline 0.6s;
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        outline:1px solid $white;
+        transition:all 0.7s;
+        opacity: 0;
+        outline-offset:25px; 
+    }
+    &:focus {
+        outline:1px solid rgba($color: $yellow, $alpha: 0.9);
+    }
+    &:active {
+        outline:1px solid rgba($color: $yellow, $alpha: 0.9);
+        &::before {
+          outline-offset:0px; 
+          outline-color: $white;
+          opacity: 1;
+          transition: all 0s;
+        }
+    }
+    &:hover {
+        transition:box-shadow 0.6s, outline 0.6s;
+        outline:1px solid $white;
+        box-shadow: inset 12.6em 0 0 0 #b6b5b023;
+      }
+      
+    
+    // @media only screen and (max-width: 1824px){
+        
+    // }
+
+    @include mobile-only {
+        
+    };
+    @include tablet-portrait-up {
+        
+    };
+    @include tablet-landscape-up {
+        width: 185px;
+        height: 65px;
+        font-size: 0.9rem;
+        line-height: 20px;
+        &_text {
+            padding: 7px;
+        }
+    };
+    @include desktop-up {
+        width: 185px;
+        height: 65px;
+        font-size: 0.9rem;
+        line-height: 20px;
+        &_text {
+            padding: 7px;
+        }
+    };
+    @include big-desktop-up {
+        width: 190px;
+        height: 70px;
+    };
 }
 
 @mixin scrollbar($width, $track-bg, $thumb-bg, $thumb-border-sz, $thumb-bg-hover) {
