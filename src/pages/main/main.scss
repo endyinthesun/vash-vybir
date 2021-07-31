@@ -1,6 +1,6 @@
-@import '../../../scss/variables';
+@import 'src/scss/variables';
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
-@import '../../../scss/mixin';
+@import 'src/scss/mixin';
 
 $dot-character: "\2022";
 $dot-size: 20px;
@@ -40,7 +40,7 @@ $dot-size: 20px;
                     }
                     &.slick-prev {
                         left: -10px;
-                    }        
+                    }
                     &.slick-next {
                         right: -10px;
                     }
@@ -66,7 +66,7 @@ $dot-size: 20px;
                             width: 35%;
                         }
                         &_descr {
-                            
+
                             &_title {
                                 letter-spacing: 0.2em;
                                 font-weight: 500;
@@ -192,7 +192,7 @@ $dot-size: 20px;
         overflow: hidden;
         margin: -40px auto 0 auto;
         border-radius: 10px;
-        background: url('./img/form-bg.png') center center/cover no-repeat;
+        background: url('/src/pages/main/img/form-bg.png') center center/cover no-repeat;
         z-index: 1;
         position: relative;
         .form_group {
@@ -254,7 +254,7 @@ $dot-size: 20px;
                                         position: absolute;
                                     }
                                 }
-                                
+
                                 &.error {
                                     .fields {
                                         &::after {
@@ -339,7 +339,7 @@ $dot-size: 20px;
                     transition: color 0.3s;
                     content: '\f2bb';
                     z-index: 1;
-                    font-family: "Font Awesome 5 Free"; 
+                    font-family: "Font Awesome 5 Free";
                     font-weight: 900;
                     left: 12px;
                     position: absolute;
@@ -368,7 +368,7 @@ $dot-size: 20px;
                 &::before {
                     content: '\f879 ';
                     z-index: 1;
-                    font-family: "Font Awesome 5 Free"; 
+                    font-family: "Font Awesome 5 Free";
                     font-weight: 900;
                     left: 12px;
                     position: absolute;
@@ -399,7 +399,7 @@ $dot-size: 20px;
         border-radius: 20px;
         margin-top: -40px;
         .about_map {
-            .container { 
+            .container {
                 .row {
                     .left_side {
                         .descr {
@@ -422,7 +422,7 @@ $dot-size: 20px;
                             }
                         }
                     }
-                    .title { 
+                    .title {
                         height: 100px;
                         display: flex;
                         margin-bottom: 45px;
@@ -434,7 +434,7 @@ $dot-size: 20px;
                             flex-direction: column;
                             justify-content: space-around;
                             margin-left: 30px;
-                            .first { 
+                            .first {
                                 color: $white;
                             }
                             .second {
@@ -447,5 +447,5 @@ $dot-size: 20px;
         }
     }
 
-    @import './breakpoints.scss';
+    @import 'src/pages/main/breakpoints';
 }

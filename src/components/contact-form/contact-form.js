@@ -6,25 +6,26 @@ import Spinner from '../spinner';
 
 function ContactForm() {
   const choServ = new ChoiceService();
-  
+
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const [loading, setLoading] = useState(false);
   const [succeeded, setSucceeded] = useState(false);
   const [error, setError] = useState('');
-  
+
   useEffect(() => {
-    console.log(`number -- ${number}`);
+    let timerId;
     if(succeeded && !loading) {
-      setTimeout(() => {
+      timerId = setTimeout(() => {
           setSucceeded(false);
-      }, 5000);
+      }, 3000);
     }
     if(error && !loading) {
-      setTimeout(() => {
+      timerId = setTimeout(() => {
         setError('');
-    }, 5000);
+    }, 3000);
     }
+    return () => clearTimeout(timerId)
   });
 
   const ownHandleSubmit = (e) => {
@@ -38,7 +39,7 @@ function ContactForm() {
       };
       choServ.postForm('https://app.form2chat.io/f/7456d335', formData)
       .then((res) => {
-        if(res.ok) {
+        if(res.status === 200) {
           setSucceeded(true);
           setError('');
 
@@ -49,7 +50,7 @@ function ContactForm() {
           setError('server');
         }
       })
-      .catch((rej) => {
+      .catch(() => {
         setSucceeded(false);
         setError('network');
       })
@@ -77,7 +78,7 @@ function ContactForm() {
         timerId = setTimeout(() => {
           target.parentNode.classList.remove('error');
         }, 3000);
-      } 
+      }
   }
 
   const onChangeNumber = ({target}) => {
@@ -96,7 +97,7 @@ function ContactForm() {
       case 'errorNetwork':
         contain = 'Проблеми зі з\'єднанням в мережі. ';
         break;
-      
+
       default:
         contain = 'Непередбачувана помилка.'
     };
@@ -107,21 +108,21 @@ function ContactForm() {
       </span>
     );
   }
-  
+
   if(loading) {
     return  <Spinner />;
-  }  
+  }
   if(succeeded) {
     return createMessage('succeeded', 'successful');
   }
-  
+
   if(error === 'server') {
     return createMessage('errorServer', 'error');
   }
   if(error === 'network') {
     return createMessage('errorNetwork', 'error');
   }
-  
+
   return (
     <>
       <form onSubmit={ownHandleSubmit}>
@@ -131,10 +132,10 @@ function ContactForm() {
                 Як до вас звертатися?
             </label>
             <div className="form_field" id="name_wrapper">
-              <input 
+              <input
                     placeholder={'Ім\'я та прізвище'}
-                    type="text" 
-                    id="name" 
+                    type="text"
+                    id="name"
                     name="name"
                     spellCheck="false"
                     value={name}
@@ -148,13 +149,13 @@ function ContactForm() {
             </label>
             <div className="form_field" id="number_wrapper">
               <span className="prefix">+38</span>
-              <Input 
+              <Input
                   placeholder='(XXX)-XXX-XX-XX'
                   mask='(000)-`000-`00-`00'
                   radix="."
                   type="tel"
-                  inputMode='tel' 
-                  id="number" 
+                  inputMode='tel'
+                  id="number"
                   name="number"
                   spellCheck="false"
                   value={number}
@@ -163,9 +164,9 @@ function ContactForm() {
             </div>
           </div>
         </div>
-      
+
         <button
-            type="submit" 
+            type="submit"
             className="form_btn"
         >
             отримати <br/>

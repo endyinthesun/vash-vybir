@@ -1,4 +1,4 @@
-@import '../../../scss/breakpoints';
+@import 'src/scss/breakpoints';
 
 // max-width: 599px
 @include mobile-only {
@@ -104,7 +104,7 @@
     .about_map {
         padding-top: 5em;
         padding-bottom: 3em;
-        .container { 
+        .container {
                 .left_side {
                     border: none;
                 }
@@ -136,12 +136,12 @@
                 .slick-arrow {
                     &.slick-prev {
                         left: -15px;
-                    }        
+                    }
                     &.slick-next {
                         right: -15px;
                     }
                 }
-                
+
                 .slick-list {
                     min-height: 300px;
                     .slide {
@@ -196,7 +196,7 @@
         .about_map {
             padding-top: 5em;
             padding-bottom: 5em;
-            .container { 
+            .container {
                 .row {
                     .left_side {
                         padding-right: 2.5em;
@@ -210,7 +210,7 @@
                     .right_side {
                         padding-left: 2.5em;
                     }
-                    .title { 
+                    .title {
                         height: 100px;
                         margin-bottom: 45px;
                         &_text {
@@ -242,12 +242,12 @@
                     height: 95px;
                     &.slick-prev {
                         left: -20px;
-                    }        
+                    }
                     &.slick-next {
                         right: -20px;
                     }
                 }
-                
+
                 .slick-list {
                     min-height: 300px;
                     .slide {
@@ -286,7 +286,7 @@
         .about_map {
             padding-top: 7em;
             padding-bottom: 7em;
-            .container { 
+            .container {
                 .row {
                     .left_side {
                         padding-right: 4em;
@@ -303,7 +303,7 @@
                             height: 400px;
                         }
                     }
-                    .title { 
+                    .title {
                         height: 100px;
                         margin-bottom: 45px;
                         &_text {

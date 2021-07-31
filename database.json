@@ -4,7 +4,7 @@
       "id": 1,
       "alt": "aluplast",
       "name": "Aluplast",
-      "imgName": "window.png",
+      "imgUrl": "https://i.ibb.co/8PNWHHV/window.png",
       "advantages": [
         {
           "name": "німецька якість",
@@ -29,7 +29,7 @@
       "id": 2,
       "alt": "lorem",
       "name": "lorem",
-      "imgName": "jalousie.png",
+      "imgUrl": "https://i.ibb.co/qNdfhMj/jalousie.png",
       "advantages": [
         {
           "name": "Lorem ipsum dolor sit amet",
@@ -50,7 +50,7 @@
       "id": 3,
       "alt": "door",
       "name": "Door",
-      "imgName": "door.png",
+      "imgUrl": "https://i.ibb.co/BBQbkBT/door.png",
       "advantages": [
         {
           "name": "Lorem ipsum dolor sit amet",
@@ -72,10 +72,10 @@
           "name": "enim ad minim veniam",
           "id":5
         }
-        
+
       ],
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque et feugiat molestie auctor. Urna quisque morbi facilisi dolor tempor tellus nisi proin. Felis pharetra, amet, massa arcu lectus facilisis. Tellus, aliquet eget cras accumsan ac at. Tempor, morbi ac vestibulum dictum viverra."
     }
-    
+
   ]
 }
