@@ -5,7 +5,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './app.scss';
 
 import Sidebar from '_components/sidebar';
-import {Main, Gallery} from '_pages/index';
+import {Main,ProductsGoods, Gallery} from '_pages/index';
 
 function App() {
   const [page, setPage] = useState('/');
@@ -24,9 +24,11 @@ function App() {
         <div className="content">
           <div className="wrapper">
             <Switch>
-              <Route path="/" exact component={Main} />
+              <Route path="/" exact component={ProductsGoods} />
+              <Route path="/products" exact component={Main} />
               <Route path="/gallery" component={Gallery} />
             </Switch>
+            {/*  <Gallery />*/}
           </div>
         </div>
       </Router>

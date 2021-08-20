@@ -182,7 +182,7 @@ const AboutMap = ({onLoadMap}) => {
                 </div>
               </div>
               <div className="map">
-                <Gmap onLoadMap={onLoadMap} />
+                <Gmap />
               </div>
             </div>
           </div>

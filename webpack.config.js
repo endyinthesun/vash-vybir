@@ -9,7 +9,7 @@ module.exports = {
     alias: {
       _components: path.resolve(__dirname, 'src/components'),
       _pages: path.resolve(__dirname, 'src/pages'),
-      fonts: path.resolve(__dirname, 'assets/fonts'),
+      scss: path.resolve(__dirname, 'src/scss'),
     },
   },
   module: {
@@ -18,52 +18,43 @@ module.exports = {
       {
         test: /\.js$/i,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        use: ['babel-loader']
       },
+
+      //Loading HTML
+      // {
+      //     test: /\.html$/i,
+      //     loader: "html-loader",
+      //     options: {
+      //         sources: {
+      //             list: [
+      //                 {
+      //                     tag: 'img',
+      //                     attribute: "data-src",
+      //                     type: "src"
+      //                 }
+      //             ]
+      //         }
+      //     }
+      // },
 
       //Loading CSS
       {
         test: /\.(css)$/i,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-          },
-        ],
+        use: ['style-loader', 'css-loader']
       },
 
       //Loading SCSS and SASS
       {
         test: /\.(s[ca]ss)$/i,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-          },
-          {
-            loader: 'resolve-url-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true, // <-- IMPORTANT!
-            },
-          },
-        ],
+        use: ['style-loader', 'css-loader', 'sass-loader']
       },
 
       //Loading SVG for SCSS
       {
         test: /\.svg$/i,
         issuer: /\.scss$/,
-        loader: 'url-loader',
+        loader:'url-loader'
       },
 
       //Loading images
@@ -75,17 +66,17 @@ module.exports = {
             options: {
               outputPath: 'images',
               name: '[name]-[sha1:hash:7].[ext]',
-              limit: 20000,
-            },
-          },
-        ],
+              limit: 20000
+            }
+          }
+        ]
       },
 
       //Loading SVG
       {
         test: /\.svg$/i,
         issuer: /\.js$/i,
-        use: ['@svgr/webpack'],
+        use: ['@svgr/webpack']
       },
 
       //Loading fonts
@@ -96,11 +87,11 @@ module.exports = {
             loader: 'file-loader',
             options: {
               outputPath: 'fonts',
-              name: '[name]-[sha1:hash:7].[ext]',
-            },
-          },
-        ],
-      },
+              name: '[name]-[sha1:hash:7].[ext]'
+            }
+          }
+        ]
+      }
     ],
   },
   plugins: [

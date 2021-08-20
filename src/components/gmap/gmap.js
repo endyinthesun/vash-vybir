@@ -20,20 +20,20 @@ export default function Gmap() {
   };
   return (
     <div className="gmap_wrapper">
-      <LoadScript googleMapsApiKey="AIzaSyBOczvH2n2uuDy6VClOiM1r4UoEKCV4F6M">
-        <GoogleMap
-          mapContainerClassName="gmap"
-          options={options}
-          onLoad={this.props.onLoadMap}>
-          <Marker
-            position={{
-              lat: 50.7516779698738,
-              lng: 25.329030658899786,
-            }}
-            title="Ми знаходимось тут"
-          />
-        </GoogleMap>
-      </LoadScript>
+      {/*<LoadScript googleMapsApiKey="AIzaSyBOczvH2n2uuDy6VClOiM1r4UoEKCV4F6M">*/}
+      {/*  <GoogleMap*/}
+      {/*    mapContainerClassName="gmap"*/}
+      {/*    options={options}*/}
+      {/*    onLoad={this.props.onLoadMap}>*/}
+      {/*    <Marker*/}
+      {/*      position={{*/}
+      {/*        lat: 50.7516779698738,*/}
+      {/*        lng: 25.329030658899786,*/}
+      {/*      }}*/}
+      {/*      title="Ми знаходимось тут"*/}
+      {/*    />*/}
+      {/*  </GoogleMap>*/}
+      {/*</LoadScript>*/}
     </div>
   );
 }

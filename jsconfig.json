@@ -4,7 +4,7 @@
         "paths": {
             "_components/*": ["./src/components/*"],
             "_pages/*": ["./src/pages/*"],
-            "fonts/*": ["./assets/fonts/*"]
+            "scss/*": ["./src/scss/*"]
         }
     },
     "exclude": ["node_modules", "dist"]
