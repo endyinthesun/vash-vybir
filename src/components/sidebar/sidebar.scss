@@ -75,13 +75,51 @@
 
     //Media-queries
 
-    @include tablet-landscape-up {
+    //max-width: 599px
+    @include mobile-only {
+        height: 0;
+        border: none;
+        background: none;
+        right: 0;
+        left: 0;
+        //left: -260px;
+        .menu-btn {
+            position: fixed;
+            right: 40px;
+            z-index: 1;
+        }
+        &_wrapper{
+            background-color: rgba($color: $sidebar-bg, $alpha: 0.98);
+            display: none;
+            padding: 2em 2em 1em;
+        }
+        .menu-btn {
+            &.hide {
+                transform: translateX(85px);
+            }
+        }
+        &.open {
+            background: none;
+            height: 100%;
+            .sidebar_wrapper {
+                display: flex;
+            }
+        }
+        // width: 0;
+    }
+
+    //min-width: 600px
+    @include tablet-portrait-up {
         background-color: rgba($color: $sidebar-bg, $alpha: 0.98);
         border-right-color: transparent;
-        left: -276px;
+        left: -240px;
         &_wrapper{
-            // padding: 2em 0 0.5em 0;
-            padding: 2em 0 0.5em 2em;
+            padding: 1.5em 0 0.5em 1.5em;
+        }
+        .menu-btn {
+            &.hide {
+                transform: translateX(-60px);
+            }
         }
         &.open {
             width: 260px;
@@ -94,8 +132,32 @@
             }
         }
         // width: 0;
-        
+    }
 
+    //min-width: 900px
+    @include tablet-landscape-up {
+        background-color: rgba($color: $sidebar-bg, $alpha: 0.98);
+        border-right-color: transparent;
+        left: -250px;
+        &_wrapper{
+            padding: 2em 0 0.5em 2em;
+        }
+        .menu-btn {
+            &.hide {
+                transform: translateX(0px);
+            }
+        }
+        &.open {
+            width: 260px;
+            left: 0;
+            border-right-color: rgba($color: $yellow, $alpha: 0.9);
+            .sidebar_wrapper {
+                .header, .footer {
+                    // overflow: visible;
+                }
+            }
+        }
+        // width: 0;
     }
     
     @include desktop-up {

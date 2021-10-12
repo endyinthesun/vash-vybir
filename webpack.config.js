@@ -5,10 +5,16 @@ module.exports = {
   mode: 'development',
   target: 'web',
   entry: ['react-hot-loader/patch', './src/'],
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'index_bundle.js',
+    publicPath: '/',
+  },
   resolve: {
     alias: {
       _components: path.resolve(__dirname, 'src/components'),
       _pages: path.resolve(__dirname, 'src/pages'),
+      _api: path.resolve(__dirname, 'src/api'),
       scss: path.resolve(__dirname, 'src/scss'),
     },
   },
@@ -18,7 +24,7 @@ module.exports = {
       {
         test: /\.js$/i,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: ['babel-loader'],
       },
 
       //Loading HTML
@@ -41,20 +47,20 @@ module.exports = {
       //Loading CSS
       {
         test: /\.(css)$/i,
-        use: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader'],
       },
 
       //Loading SCSS and SASS
       {
         test: /\.(s[ca]ss)$/i,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
 
       //Loading SVG for SCSS
       {
         test: /\.svg$/i,
         issuer: /\.scss$/,
-        loader:'url-loader'
+        loader: 'url-loader',
       },
 
       //Loading images
@@ -66,17 +72,17 @@ module.exports = {
             options: {
               outputPath: 'images',
               name: '[name]-[sha1:hash:7].[ext]',
-              limit: 20000
-            }
-          }
-        ]
+              limit: 20000,
+            },
+          },
+        ],
       },
 
       //Loading SVG
       {
         test: /\.svg$/i,
         issuer: /\.js$/i,
-        use: ['@svgr/webpack']
+        use: ['@svgr/webpack'],
       },
 
       //Loading fonts
@@ -87,11 +93,11 @@ module.exports = {
             loader: 'file-loader',
             options: {
               outputPath: 'fonts',
-              name: '[name]-[sha1:hash:7].[ext]'
-            }
-          }
-        ]
-      }
+              name: '[name]-[sha1:hash:7].[ext]',
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
@@ -103,5 +109,6 @@ module.exports = {
   devServer: {
     open: true,
     hot: true,
+    historyApiFallback: true,
   },
 };

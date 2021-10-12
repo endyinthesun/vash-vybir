@@ -4,6 +4,7 @@
         "paths": {
             "_components/*": ["./src/components/*"],
             "_pages/*": ["./src/pages/*"],
+            "_api/*": ["./src/api/*"],
             "scss/*": ["./src/scss/*"]
         }
     },

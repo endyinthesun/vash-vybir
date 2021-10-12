@@ -77,8 +77,26 @@
 
 
     // Media-queries
-    
-    @include tablet-landscape-up {
+
+    //max-width: 599px
+    @include mobile-only {
+        font-size: 1rem;
+        &_logo {
+            width: 180px;
+        }
+        &_nav {
+            margin-top: 3em;
+            //width: 200px;
+            ul {
+                li {
+                    margin-top: 1em;
+                }
+            }
+        }
+    }
+
+    //min-width: 600px
+    @include tablet-portrait-up {
         // width: 227px;
         font-size: 1rem;
         &_logo {

@@ -49,8 +49,8 @@ $dot-size: 20px;
                     width: 80%;
                     margin: 0 auto;
                     border-left: 1px solid rgba($color: $yellow, $alpha: 0.9);
-                    min-height: 350px;
-                    max-height: 500px;
+                    //min-height: 350px;
+                    //max-height: 500px;
                     .slide {
                         display: flex;
                         justify-content: space-between;
@@ -187,7 +187,7 @@ $dot-size: 20px;
     }
 
     .form {
-        height: 365px;
+        //height: 365px;
         width: 95%;
         overflow: hidden;
         margin: -40px auto 0 auto;

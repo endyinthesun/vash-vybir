@@ -69,8 +69,38 @@
     }
 
     // Media-queries
+    @include mobile-only {
+        font-size: 0.73rem;
+        &-info {
+            .info_block {
+                margin-bottom: 1.5em;
+                &:last-child {
+                    margin-bottom: 2em;
+                }
+                &_title {
+                    font-weight: 300;
+                    margin-bottom: 0.8em;
+                    &_icon {
+                        height: 19px;
+                        width: auto;
+                        margin-right: 1em;
+                    }
+                }
 
-    @include tablet-landscape-up {
+            }
+        }
+        &-social{
+            .social_link {
+                margin-right: 2.5em;
+                &_icon {
+                    height: 30px;
+                    width: 30px;
+                }
+            }
+        }
+    }
+
+    @include tablet-portrait-up {
         font-size: 0.73rem;
         &-info {
             .info_block {
@@ -100,16 +130,7 @@
             }
         }
     }
-    
-    @include tablet-landscape-up {
-        &-info {
-            width: 227px;
-        }
-        &-social {
-            width: 227px;
-        }
-    }
-    
+
     @include desktop-up {
         
     }

@@ -60,10 +60,20 @@
     // }
 
     @include mobile-only {
-        
+        width: 185px;
+        height: 65px;
+        font-size: 0.9rem;
+        line-height: 20px;
+        &_text {
+            padding: 7px;
+        }
     };
     @include tablet-portrait-up {
-        
+        width: 160px;
+        height: 60px;
+        font-size: 0.8rem;
+        line-height: 20px;
+
     };
     @include tablet-landscape-up {
         width: 185px;

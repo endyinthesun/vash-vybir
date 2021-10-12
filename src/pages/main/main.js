@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import {useTitle} from 'react-use';
 
 //components
 import Carousel from '_components/carousel';
@@ -15,45 +16,37 @@ import Pin from './img/about_map/pin.svg';
 import SliderBG from './img/slider-bg.svg';
 import TrustBG from './img/trust-bg.svg';
 
-//services
-import ChoiceService from '../../services/choice-service';
+//api
+import {_getAllProducts} from '_api/routes';
 
 //styles
 import './main.scss';
 
 export default function Main() {
-  const choServ = new ChoiceService();
+  useTitle('Ваш вибір');
 
+  //states
   const [loadingSlider, setLoadingSlider] = useState(true);
   const [loadingMap, setLoadingMap] = useState(true);
   const [sliderData, setSliderData] = useState([]);
 
-  const getSlideData = () => {
-    const selectSlidesId = [1, 2, 3];
-    const request = selectSlidesId.map(id => {
-      return choServ.getProduct(id);
-    });
-    Promise.all(request).then(data => {
-      let sliderData = data.map(
-        ({data: {id, alt, name, imgUrl, advantages}}) => ({
-          id,
-          alt,
-          name,
-          imgUrl,
-          advantages,
-        }),
-      );
-
-      setSliderData(sliderData);
-      setLoadingSlider(false);
-    });
-  };
+  //effects
+  useEffect(() => {
+    _getAllProducts()
+      .then(res => {
+        // console.log('res--- ', res.data.data);
+        setSliderData(res.data.data);
+      })
+      .catch(e => {
+        console.log('error-- ', e);
+      })
+      .finally(() => {
+        setLoadingSlider(false);
+      });
+  }, []);
 
   const onLoadMap = () => setLoadingMap(false);
 
-  useEffect(() => {
-    getSlideData();
-  }, []);
   return loadingSlider && loadingMap ? (
     <Spinner />
   ) : (

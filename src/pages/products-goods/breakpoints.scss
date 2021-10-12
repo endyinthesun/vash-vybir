@@ -7,7 +7,31 @@
 
 //min-width: 600px
 @include tablet-portrait-up {
-
+  .products_goods-wrapper .products_goods .container .main .goods {
+      grid-template-columns: 1fr;
+    padding: 1em 2em;
+    .good_items {
+      position: relative;
+      padding: 2em 0;
+      .good_item {
+        &::after {
+          content: none;
+        }
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        height: 1px;
+        background-color: white;
+      }
+    }
+    .details {
+      padding: 2em 0;
+    }
+  }
 }
 
 //min-width: 900px

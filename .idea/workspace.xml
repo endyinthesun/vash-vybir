@@ -1,10 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fbebd21b-ecf6-4c18-b925-7edc6a5088bd" name="Default Changelist" comment="added &quot;products and goods&quot; page and fixed minor bugs">
-      <change afterPath="$PROJECT_DIR$/src/pages/products-goods/breakpoints.scss" afterDir="false" />
+    <list default="true" id="fbebd21b-ecf6-4c18-b925-7edc6a5088bd" name="Default Changelist" comment="added more features and connected local api(check readme)">
+      <change afterPath="$PROJECT_DIR$/src/api/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/products-goods/products-goods.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/products-goods/products-goods.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/jsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/carousel/carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/carousel/carousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/contact-form/contact-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/contact-form/contact-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/footer/footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sidebar/sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sidebar/sidebar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/sidebar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/gallery/gallery.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/gallery/gallery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/main/breakpoints.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main/breakpoints.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/main/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/products-goods/breakpoints.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/products-goods/breakpoints.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/products-goods/products-goods.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/products-goods/products-goods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/_mixin.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/_mixin.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/bootstrap/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/bootstrap/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/choice-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/choice-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +46,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -32,6 +60,21 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/package.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/footer/footer.scss" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/scss/_breakpoints.scss" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/header/header.scss" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/pages/main/main.scss" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/scss/_mixin.scss" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/header/header.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/pages/main/breakpoints.scss" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/sidebar/sidebar.scss" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/app/app.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/sidebar/sidebar.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/app/app.scss" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/components/carousel/carousel.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1oQjnRfvOeZVhCbbuUeibs864ET" />
   <component name="ProjectLevelVcsManager">
@@ -45,14 +88,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/products-goods/icons" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../diadia_pizza_mobile_app" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="reference.idesettings.emmet.css" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -71,6 +114,32 @@
       <recent name="$PROJECT_DIR$/src" />
       <recent name="C:\OpenServer\domains\vash-vybir\src\components\header" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="C:/Users/User/IdeaProjects/vash-vybir" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.C:/Users/User/IdeaProjects/vash-vybir" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -94,6 +163,17 @@
       <workItem from="1628409962482" duration="16000" />
       <workItem from="1628410091998" duration="13000" />
       <workItem from="1628623927131" duration="204000" />
+      <workItem from="1632768056935" duration="4649000" />
+      <workItem from="1632846981270" duration="13967000" />
+      <workItem from="1632862481245" duration="163000" />
+      <workItem from="1633028946990" duration="2944000" />
+      <workItem from="1633282032160" duration="360000" />
+      <workItem from="1633282774706" duration="12551000" />
+      <workItem from="1633459571424" duration="11312000" />
+      <workItem from="1633625967409" duration="7385000" />
+      <workItem from="1633779487412" duration="86000" />
+      <workItem from="1633780377269" duration="662000" />
+      <workItem from="1634068127996" duration="4112000" />
     </task>
     <servers />
   </component>
@@ -120,7 +200,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added &quot;products and goods&quot; page and fixed minor bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="added &quot;products and goods&quot; page and fixed minor bugs" />
+    <MESSAGE value="added more features and connected local api(check readme)" />
+    <option name="LAST_COMMIT_MESSAGE" value="added more features and connected local api(check readme)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
