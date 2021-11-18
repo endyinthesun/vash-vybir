@@ -30,11 +30,10 @@ export default function Main() {
   const [loadingMap, setLoadingMap] = useState(true);
   const [sliderData, setSliderData] = useState([]);
 
-  //effects
   useEffect(() => {
     _getAllProducts()
       .then(res => {
-        // console.log('res--- ', res.data.data);
+        console.log('res--- ', res.data.data);
         setSliderData(res.data.data);
       })
       .catch(e => {

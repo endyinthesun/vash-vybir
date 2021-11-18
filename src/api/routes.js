@@ -7,6 +7,8 @@ export const _getAllProducts = () =>
   api.get('/Products.php?controller=getProducts');
 export const _getCategories = params =>
   api.get('/Category.php?controller=getCategories');
+export const _getGallery = params =>
+  api.get('/Gallery.php?controller=getGallery');
 
 //other api
 export const _postFeedbackForm = data =>

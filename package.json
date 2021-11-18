@@ -67,7 +67,7 @@
   "scripts": {
     "webpack-serv": "webpack serve --port 3000",
     "json-server": "json-server database.json --port 8000",
-    "start": "npm run webpack-serv",
+    "start": "yarn run webpack-serv",
     "build": "webpack"
   },
   "eslintConfig": {

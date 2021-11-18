@@ -12,10 +12,21 @@
                 position: relative;
                 display: inline-block;
                 .image-gallery-image {
-                    // max-height: calc(100vh - 160px);
+                     //max-height: calc(100vh - 160px);
                     height: calc(100vh - 220px);
                     width: auto;
 
+                }
+            }
+            .image-gallery-title {
+                position: absolute;
+                left: 0;
+                bottom: 2em;
+                span {
+                    white-space: normal;
+                    color: $white;
+                    background: $black-secondary;
+                    padding: 0.5em;
                 }
             }
         }
@@ -23,6 +34,7 @@
             .image-gallery-svg {
                 opacity: 0.7;
                 transform: none;
+                width: 45px;
                 &:hover {
                     opacity: 1;
                 }

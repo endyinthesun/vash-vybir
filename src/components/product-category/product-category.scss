@@ -95,6 +95,31 @@
 
   // Media-queries
 
+  @include tablet-portrait-up {
+    .head {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &_icon {
+        aspect-ratio: 1 / 1;
+        padding: 0.6em;
+        height: 80px;
+        width: 80px;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 100%;
+        background-color: #93AA9D;
+
+      }
+      &_text_title {
+          margin-top: 1em;
+          font-size: 1rem;
+          text-transform: uppercase;
+          font-weight: 400;
+      }
+
+    }
+  }
+
   @include tablet-landscape-up {
 
   }

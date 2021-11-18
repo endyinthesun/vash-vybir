@@ -20,6 +20,7 @@ export default function Header({onChangePage, page}) {
   const btns = btnsArr.map(({key, label}) => {
     const Active = page === key;
     const clazz = Active ? 'nav_link active' : 'nav_link';
+    console.log('key--- ', key);
     return (
       <li key={key}>
         <div className={clazz}>

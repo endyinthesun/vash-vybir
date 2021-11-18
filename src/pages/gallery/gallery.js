@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import ImageGallery from 'react-image-gallery';
-import {useTitle} from 'react-use';
+import {useTitle, useMedia} from 'react-use';
 
 //style
 import './gallery.scss';
@@ -8,88 +8,39 @@ import './gallery.scss';
 //SVGs
 import PrevArrowIcon from './prev-arrow.svg';
 import NextArrowIcon from './next-arrow.svg';
+import {_getGallery} from '_api/routes';
+
+//components
+import Spinner from '_components/spinner';
 
 function Gallery() {
+  //hooks
   useTitle('Галерея робіт');
-  const imagesArrs = [
-    {
-      original: '1.jpg',
-      thumbnail: '1.jpg',
-      description: 'вул. Винниченка, 5',
-    },
-    {
-      original: '2.jpg',
-      thumbnail: '2.jpg',
-      description: 'пр. Волі, 27',
-    },
-    {
-      original: '3.jpg',
-      thumbnail: '3.jpg',
-      description: 'Цукровий завод',
-    },
-    {
-      original: '4.jpg',
-      thumbnail: '4.jpg',
-      description: 'вул. Василя Стуса, 666',
-    },
-    {
-      original: '5.jpg',
-      thumbnail: '5.jpg',
-    },
-    {
-      original: '6.jpg',
-      thumbnail: '6.jpg',
-    },
-    {
-      original: '7.jpg',
-      thumbnail: '7.jpg',
-    },
-    // {
-    //     original: '7.jpg',
-    //     thumbnail: '7.jpg'
-    // },
-    // {
-    //     original: '7.jpg',
-    //     thumbnail: '7.jpg'
-    // },
-    //  {
-    //     original: '7.jpg',
-    //     thumbnail: '7.jpg'
-    // },
-    //  {
-    //     original: '7.jpg',
-    //     thumbnail: '7.jpg'
-    // },
-    //  {
-    //     original: '7.jpg',
-    //     thumbnail: '7.jpg'
-    // },
-    //  {
-    //     original: '7.jpg',
-    //     thumbnail: '7.jpg'
-    // },
-    //  {
-    //     original: '7.jpg',
-    //     thumbnail: '7.jpg'
-    // },
-    //  {
-    //     original: '7.jpg',
-    //     thumbnail: '7.jpg'
-    // },
-    //  {
-    //     original: '7.jpg',
-    //     thumbnail: '7.jpg'
-    // },
-    //  {
-    //     original: '7.jpg',
-    //     thumbnail: '7.jpg'
-    // },
-  ];
-  const images = imagesArrs.map(({original, thumbnail, description = ''}) => {
+
+  const isMobile = useMedia('(max-width: 599px)');
+
+  const [galleryData, setGalleryData] = useState([]);
+  const [loadingGallery, setLoadingGallery] = useState(true);
+
+  useEffect(() => {
+    _getGallery()
+      .then(res => {
+        console.log('res--- ', res.data.data);
+        setGalleryData(res.data.data);
+      })
+      .catch(e => {
+        console.log('error-- ', e);
+      })
+      .finally(() => {
+        setLoadingGallery(false);
+      });
+  }, []);
+
+  const images = galleryData.map(({source, title = ''}) => {
     return {
-      original: require(`./img/original/${original}`).default,
-      thumbnail: require(`./img/thumbnail/${thumbnail}`).default,
-      description,
+      original: source,
+      thumbnail: source,
+      description: title,
     };
   });
 
@@ -113,16 +64,39 @@ function Gallery() {
       </button>
     );
   };
+  const renderItem = ({original, description}) => (
+    <div>
+      <img
+        className="image-gallery-image"
+        src={original}
+        alt={description}
+        srcSet=""
+        height
+        width
+        sizes
+        title
+      />
+      <div className="image-gallery-title">
+        <span>{description}</span>
+      </div>
+    </div>
+  );
 
   return (
     <div>
-      <ImageGallery
-        items={images}
-        showFullscreenButton={false}
-        showPlayButton={false}
-        renderLeftNav={renderLeftNav}
-        renderRightNav={renderRightNav}
-      />
+      {loadingGallery ? (
+        <Spinner />
+      ) : (
+        <ImageGallery
+          items={images}
+          showFullscreenButton={false}
+          showPlayButton={false}
+          renderLeftNav={renderLeftNav}
+          renderRightNav={renderRightNav}
+          renderItem={renderItem}
+          showNav={!isMobile}
+        />
+      )}
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const BASE_URL = 'http://vash-vybir/back/api';
+export const BASE_URL = 'http://vash-vybir.lutsk.ua/back/api';
 
 class AxiosConfig {
   constructor(url) {
@@ -10,11 +10,6 @@ class AxiosConfig {
   _create = () =>
     axios.create({
       baseURL: this.baseURL,
-      // headers: {
-      //   'Content-Type': 'application/json',
-      //   accept: 'application/json',
-      //   'Cache-Control': 'no-cache, no-store, must-revalidate',
-      // },
     });
 }
 

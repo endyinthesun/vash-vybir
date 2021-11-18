@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useTitle} from 'react-use';
+import {Link, Route, Switch, useRouteMatch} from 'react-router-dom';
 
 //styles
 import './products-goods.scss';
@@ -7,8 +8,11 @@ import './products-goods.scss';
 //components
 import {ProductCategory} from '_components/index';
 
+//pages
+import Products from '_pages/products/products';
+
 //api
-import {_getCategories} from '_api/routes';
+import {_getCategories, _getGallery} from '_api/routes';
 
 //SVGs
 import DoorIcon from './icons/door.svg';
@@ -18,6 +22,7 @@ import JalousieIcon from './icons/blinds.svg';
 import DrillIcon from './icons/drill.svg';
 import TruckIcon from './icons/truck.svg';
 import AdviceIcon from './icons/advice.svg';
+import Spinner from '_components/spinner';
 
 const productRateData = [
   {name: 'sdfdffd', rate: 3.5},
@@ -26,13 +31,42 @@ const productRateData = [
 ];
 export default function ProductsGoods() {
   useTitle('Товари та послуги');
+  const [loadingCategories, setLoadingCategories] = useState(true);
+  let match = useRouteMatch();
   const [categoriesData, setCategoriesData] = useState([]);
   useEffect(() => {
     _getCategories().then(res => {
+      console.log('res.data.data--- ', res.data.data);
       setCategoriesData(res.data.data);
     });
   }, []);
-
+  useEffect(() => {
+    _getCategories()
+      .then(res => {
+        setCategoriesData(res.data.data);
+      })
+      .catch(e => {
+        console.log('error-- ', e);
+      })
+      .finally(() => {
+        setLoadingCategories(false);
+      });
+  }, []);
+  console.log('match.url-- ', match.url);
+  const categoriesContent = categoriesData.length
+    ? categoriesData.map(({id, title, sub_tittle, brand_list}) => (
+        <Link to={`${match.url}/lol`} key={id.toString()}>
+          <ProductCategory
+            icon={<WindowIcon />}
+            title={title}
+            subtitle={sub_tittle}
+            priceFrom={1233}
+            productRateData={brand_list}
+            className={'products_category_container'}
+          />
+        </Link>
+      ))
+    : null;
   return (
     <section className="products_goods-wrapper">
       <div className="products_goods">
@@ -41,19 +75,7 @@ export default function ProductsGoods() {
         </div>
         <div className="container">
           <div className="main">
-            {categoriesData.length
-              ? categoriesData.map(({id, name}) => (
-                  <ProductCategory
-                    key={id}
-                    icon={<WindowIcon />}
-                    title={name}
-                    subtitle={'Найбільший асортимент різного профілю'}
-                    priceFrom={1233}
-                    productRateData={productRateData}
-                    className={'products_category_container'}
-                  />
-                ))
-              : null}
+            {loadingCategories ? <Spinner /> : categoriesContent}
             <div className="goods">
               <div className="good_items">
                 <div className="good_item">
@@ -122,6 +144,11 @@ export default function ProductsGoods() {
           {/*<div className=" most_popular"></div>*/}
         </div>
       </div>
+      <Switch>
+        <Route path={`${match.path}/lol`}>
+          <Products />
+        </Route>
+      </Switch>
     </section>
   );
 }
