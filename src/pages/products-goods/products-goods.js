@@ -23,6 +23,7 @@ import DrillIcon from './icons/drill.svg';
 import TruckIcon from './icons/truck.svg';
 import AdviceIcon from './icons/advice.svg';
 import Spinner from '_components/spinner';
+import {JS} from 'json-server/lib/cli/utils/is';
 
 const productRateData = [
   {name: 'sdfdffd', rate: 3.5},
@@ -36,7 +37,7 @@ export default function ProductsGoods() {
   const [categoriesData, setCategoriesData] = useState([]);
   useEffect(() => {
     _getCategories().then(res => {
-      console.log('res.data.data--- ', res.data.data);
+      // console.log('res.data.data--- ', res.data.data[0].brand_list);
       setCategoriesData(res.data.data);
     });
   }, []);
@@ -52,12 +53,34 @@ export default function ProductsGoods() {
         setLoadingCategories(false);
       });
   }, []);
-  console.log('match.url-- ', match.url);
-  const categoriesContent = categoriesData.length
-    ? categoriesData.map(({id, title, sub_tittle, brand_list}) => (
-        <Link to={`${match.url}/lol`} key={id.toString()}>
+  if (categoriesData.length) {
+    // for (let key of categoriesData[0].brand_list.keys()) {
+    //   console.log('key--- ', key);
+    // }
+    console.log(categoriesData);
+  }
+  const categoriesContent =
+    categoriesData.length &&
+    categoriesData.map(({id, title, sub_tittle, brand_list, route}) => {
+      let icon;
+      switch (route) {
+        case 'window':
+          icon = <WindowIcon />;
+          break;
+        case 'door':
+          icon = <DoorIcon />;
+          break;
+        case 'jalousie':
+          icon = <JalousieIcon />;
+          break;
+        default:
+          console.log('icon does not exist');
+          icon = <div />;
+      }
+      return (
+        <Link to={`${match.url}/${route}`} key={id.toString()}>
           <ProductCategory
-            icon={<WindowIcon />}
+            icon={icon}
             title={title}
             subtitle={sub_tittle}
             priceFrom={1233}
@@ -65,8 +88,15 @@ export default function ProductsGoods() {
             className={'products_category_container'}
           />
         </Link>
-      ))
-    : null;
+      );
+    });
+  const routes = categoriesData.map(
+    ({id, title, sub_tittle, brand_list, route}) => (
+      <Route path={`${match.path}/${route}`} key={id.toString()}>
+        <Products title={title} />
+      </Route>
+    ),
+  );
   return (
     <section className="products_goods-wrapper">
       <div className="products_goods">
@@ -144,11 +174,7 @@ export default function ProductsGoods() {
           {/*<div className=" most_popular"></div>*/}
         </div>
       </div>
-      <Switch>
-        <Route path={`${match.path}/lol`}>
-          <Products />
-        </Route>
-      </Switch>
+      <Switch>{routes}</Switch>
     </section>
   );
 }

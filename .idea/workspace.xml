@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fbebd21b-ecf6-4c18-b925-7edc6a5088bd" name="Default Changelist" comment="added some breakpoints for adaptive layout">
-      <change afterPath="$PROJECT_DIR$/src/pages/products/products.js" afterDir="false" />
+    <list default="true" id="fbebd21b-ecf6-4c18-b925-7edc6a5088bd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/choice-service.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/product-category/product-category.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/product-category/product-category.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/product-category/product-category.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/product-category/product-category.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/gallery/gallery.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/gallery/gallery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/gallery/gallery.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/gallery/gallery.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/products-goods/breakpoints.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/products-goods/breakpoints.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/products-goods/products-goods.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/products-goods/products-goods.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/bootstrap/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/bootstrap/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/products/products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/products/products.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +67,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../diadia_pizza_mobile_app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../OpenServer/domains/vash-vybir.lutsk.ua/back" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -170,7 +159,9 @@
       <workItem from="1635675518186" duration="5057000" />
       <workItem from="1635704179548" duration="10359000" />
       <workItem from="1636488709895" duration="857000" />
-      <workItem from="1637269665377" duration="302000" />
+      <workItem from="1637269665377" duration="746000" />
+      <workItem from="1638639669413" duration="2203000" />
+      <workItem from="1639942505038" duration="6221000" />
     </task>
     <task id="LOCAL-00001" summary="added more features and connected local api(check readme)">
       <created>1634072650231</created>
@@ -186,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634072733766</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added some breakpoints for adaptive layout">
+      <created>1637270294977</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1637270294977</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -15,11 +15,9 @@
       align-items: center;
       &_icon {
         aspect-ratio: 1 / 1;
-        padding: 0.6em;
-        max-height: 80px;
-        max-width: 80px;
-        //width: 70px;
-        //height: 70px;
+        padding: 15px;
+        height: 80px;
+        width: 80px;
         box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 100%;
         background-color: #93AA9D;
@@ -102,9 +100,9 @@
       align-items: center;
       &_icon {
         aspect-ratio: 1 / 1;
-        padding: 0.6em;
-        height: 80px;
-        width: 80px;
+        padding: 12px;
+        height: 65px;
+        width: 65px;
         box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 100%;
         background-color: #93AA9D;
@@ -125,7 +123,14 @@
   }
 
   @include desktop-up {
+    .head {
+      &_icon {
+        padding: 15px;
+        height: 80px;
+        width: 80px;
 
+      }
+    }
   }
 
   @include big-desktop-up {

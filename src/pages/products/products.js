@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useRouteMatch} from 'react-router-dom';
 
-export default function Products() {
+export default function Products({title}) {
   // useTitle('Товари та послуги');
   // const [loadingCategories, setLoadingCategories] = useState(true);
   // let match = useRouteMatch();
@@ -17,19 +17,7 @@ export default function Products() {
 
   return (
     <section className="products_goods-wrapper">
-      <div>sdfsdfsdfsdf</div>
-      <div>sdfsdfsdfsdf</div>
-      <div>sdfsdfsdfsdf</div>
-      <div>sdfsdfsdfsdf</div>
-      <div>sdfsdfsdfsdf</div>
-      <div>sdfsdfsdfsdf</div>
-      <div>sdfsdfsdfsdf</div>
-      <div>sdfsdfsdfsdf</div>
-      <div>sdfsdfsdfsdf</div>
-      <div>sdfsdfsdfsdf</div>
-      <div>sdfsdfsdfsdf</div>
-      <div>sdfsdfsdfsdf</div>
-      <div>sdfsdfsdfsdf</div>
+      <div>{title}</div>
       <div>sdfsdfsdfsdf</div>
       <div>sdfsdfsdfsdf</div>
     </section>
