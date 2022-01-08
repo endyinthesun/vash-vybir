@@ -121,6 +121,11 @@
                 .slide {
                     padding-left: 0;
                     min-height: 450px;
+
+                    &_img {
+                        display: flex;
+                        height: 100%;
+                    }
                     &_descr {
                         border: none;
                         font-size: 1rem;
@@ -133,6 +138,7 @@
                         }
                     }
                     &_btn {
+                        font-size: 0.7em;
                         margin: 2em 0 2em 2em;
                     }
                 }
@@ -245,9 +251,14 @@ max-width: 1450px;
                     padding-left: 1.5em;
                     min-height: 300px;
                     max-height: 450px;
+
+                    &_img {
+                        display: flex;
+                        max-width: 80%;
+                    }
                     &_descr {
                         font-size: 1rem;
-                        padding-left: 2.5rem;
+                        margin-left: 2.5rem;
                         border-left: 1px solid $white;
                         &_title {
                             letter-spacing: 0.15em;
@@ -333,6 +344,7 @@ max-width: 1800px;
 .slider-wrapper {
     .slider {
         padding-top: 4em;
+
         &__inner {
             .slick-arrow {
                 width: 50px;
@@ -351,8 +363,13 @@ max-width: 1800px;
                     padding-left: 1.5em;
                     min-height: 300px;
                     max-height: 450px;
+                    &_img {
+                        display: flex;
+                        max-height: 100%;
+                        max-width: 60%;
+                    }
                     &_descr {
-                        font-size: 1.2rem;
+                        font-size: 1.4rem;
                         padding-left: 2.5rem;
                         border-left: 1px solid $white;
                         &_title {

@@ -51,7 +51,7 @@
     &:hover {
         transition:box-shadow 0.6s, outline 0.6s;
         outline:1px solid $white;
-        box-shadow: inset 12.6em 0 0 0 #b6b5b023;
+        box-shadow: inset 30em 0 0 0 #b6b5b023;
       }
       
     
@@ -60,7 +60,7 @@
     // }
 
     @include mobile-only {
-        width: 185px;
+        width: 55%;
         height: 65px;
         font-size: 0.9rem;
         line-height: 20px;
@@ -76,7 +76,7 @@
 
     };
     @include tablet-landscape-up {
-        width: 185px;
+        width: 55%;
         height: 65px;
         font-size: 0.9rem;
         line-height: 20px;
@@ -85,7 +85,7 @@
         }
     };
     @include desktop-up {
-        width: 185px;
+        width: 55%;
         height: 65px;
         font-size: 0.9rem;
         line-height: 20px;
@@ -94,7 +94,7 @@
         }
     };
     @include big-desktop-up {
-        width: 190px;
+        width: 40%;
         height: 70px;
     };
 }
