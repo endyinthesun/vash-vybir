@@ -4,182 +4,219 @@
 
 
 .sidebar {
-    position: fixed;
-    border-right: 1px solid rgba($color: $yellow, $alpha: 0.9);
-    // border-bottom: 1px solid rgba($color: $yellow, $alpha: 0.9);
+  position: fixed;
+  border-right: 1px solid rgba($color: $yellow, $alpha: 0.9);
+  // border-bottom: 1px solid rgba($color: $yellow, $alpha: 0.9);
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 666;
+  transition: 0.5s;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+
+  &_wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 666;
+    overflow-y: scroll;
+    overflow-x: hidden;
     transition: 0.5s;
-    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
-    &_wrapper {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-        overflow-y: scroll;
-        overflow-x: hidden;
-        transition: 0.5s;
-        //$width, $track-bg, $thumb-bg, $thumb-border-sz, $thumb-bg-hover
-        @include scrollbar(
-            14px, none, rgba($color: $yellow, $alpha: 0.5), 5px, rgba($color: $yellow, $alpha: 0.7)
-        );
-       
+    //$width, $track-bg, $thumb-bg, $thumb-border-sz, $thumb-bg-hover
+    @include scrollbar(
+                    14px, none, rgba($color: $yellow, $alpha: 0.5), 5px, rgba($color: $yellow, $alpha: 0.7)
+    );
+
+  }
+
+  .menu-btn {
+    position: absolute;
+    top: 15px;
+    right: -225px;
+    display: flex;
+    justify-content: space-between;
+    width: 88%;
+    height: 40px;
+    align-items: center;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+
+    &_logo {
+      display: none;
     }
-    .menu-btn {
-        position: absolute;
-        top: 15px;
-        right: -60px;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        transition: all .2s ease-in-out;
-        &_burger {
-            @include burger-line;
-            &::before, &::after {
-                @include burger-line {
-                    content: '';
-                    position: absolute; 
-                }
-            }
-            &::before {
-              transform: translateY(12px);
-            }
-            &::after {
-              transform: translateY(-12px);
-            }
+
+    &_burger {
+      @include burger-line;
+
+      &::before, &::after {
+        @include burger-line {
+          content: '';
+          position: absolute;
         }
-        &.open {
-          .menu-btn_burger {
-            transform: translateX(-30px);
-            background: transparent;
+      }
+
+      &::before {
+        transform: translateY(10px);
+      }
+
+      &::after {
+        transform: translateY(-10px);
+      }
+    }
+
+    &.open {
+      .menu-btn {
+
+        &_burger {
+          transform: translateX(-30px);
+          background: transparent;
+          box-shadow: none;
+
+          &::before {
+            transform: rotate(45deg) translate(20px, -20px);
             box-shadow: none;
-            &::before {
-              transform: rotate(45deg) translate(20px, -20px);
-              box-shadow: none;
-            }
-            &::after {
-              transform: rotate(-45deg) translate(20px, 20px);
+          }
+
+          &::after {
+            transform: rotate(-45deg) translate(20px, 20px);
             box-shadow: none;
-    
-            }
           }
         }
-    }
-    
 
-    //Media-queries
+        &_logo {
+          opacity: 0;
 
-    //max-width: 599px
-    @include mobile-only {
-        height: 0;
-        border: none;
-        background: none;
-        right: 0;
-        left: 0;
-        //left: -260px;
-        .menu-btn {
-            position: fixed;
-            right: 40px;
-            z-index: 1;
         }
-        &_wrapper{
-            background-color: rgba($color: $sidebar-bg, $alpha: 0.98);
-            display: none;
-            padding: 2em 2em 1em;
-        }
-        .menu-btn {
-            &.hide {
-                transform: translateX(85px);
-            }
-        }
-        &.open {
-            background: none;
-            height: 100%;
-            .sidebar_wrapper {
-                display: flex;
-            }
-        }
-        // width: 0;
+      }
     }
+    &.scroll {
+      .menu-btn_logo {
+        opacity: 0;
 
-    //min-width: 600px
-    @include tablet-portrait-up {
-        background-color: rgba($color: $sidebar-bg, $alpha: 0.98);
-        border-right-color: transparent;
-        left: -240px;
-        &_wrapper{
-            padding: 1.5em 0 0.5em 1.5em;
-        }
-        .menu-btn {
-            &.hide {
-                transform: translateX(-60px);
-            }
-        }
-        &.open {
-            width: 260px;
-            left: 0;
-            border-right-color: rgba($color: $yellow, $alpha: 0.9);
-            .sidebar_wrapper {
-                .header, .footer {
-                    // overflow: visible;
-                }
-            }
-        }
-        // width: 0;
+      }
     }
+  }
 
-    //min-width: 900px
-    @include tablet-landscape-up {
-        background-color: rgba($color: $sidebar-bg, $alpha: 0.98);
-        border-right-color: transparent;
-        left: -250px;
-        &_wrapper{
-            padding: 2em 0 0.5em 2em;
-        }
-        .menu-btn {
-            &.hide {
-                transform: translateX(0px);
-            }
-        }
-        &.open {
-            width: 260px;
-            left: 0;
-            border-right-color: rgba($color: $yellow, $alpha: 0.9);
-            .sidebar_wrapper {
-                .header, .footer {
-                    // overflow: visible;
-                }
-            }
-        }
-        // width: 0;
+
+  //Media-queries
+
+  //max-width: 599px
+  @include mobile-only {
+    height: 0;
+    border: none;
+    background: none;
+    right: 0;
+    left: 0;
+    //left: -260px;
+    .menu-btn {
+      position: fixed;
+      right: 25px;
+      z-index: 1;
+
+      &_logo {
+        display: block;
+      }
     }
-    
-    @include desktop-up {
-        width: 260px;
-        left: 0;
-        border-right-color: rgba($color: $yellow, $alpha: 0.9);
-        background-color: rgba($color: $sidebar-bg, $alpha: 0.6);
-        &_wrapper{
-            padding: 2em 0 0.5em 2em;
-            .header, .footer {
-                overflow: visible;
-            }
-        }
-        .menu-btn {
-            visibility: hidden;
-        }  
+    &_wrapper {
+      background-color: rgba($color: $sidebar-bg, $alpha: 0.98);
+      display: none;
+      padding: 1.2em 2em 1em;
     }
-    
-    @include big-desktop-up {
-        width: 290px;
-        &_wrapper{
-            padding: 2.4em 0 0.7em 2.4em;
+    .menu-btn {
+      &.hide {
+        transform: translateX(105px);
+        .menu-btn_logo {
+          opacity: 0;
         }
+      }
     }
+    &.open {
+      background: none;
+      height: 100%;
+
+      .sidebar_wrapper {
+        display: flex;
+      }
+    }
+    // width: 0;
+  }
+
+  //min-width: 600px
+  @include tablet-portrait-up {
+    background-color: rgba($color: $sidebar-bg, $alpha: 0.98);
+    border-right-color: transparent;
+    left: -240px;
+    &_wrapper {
+      padding: 1.5em 0 0.5em 1.5em;
+    }
+    .menu-btn {
+      &.hide {
+        transform: translateX(-80px);
+      }
+    }
+    &.open {
+      width: 260px;
+      left: 0;
+      border-right-color: rgba($color: $yellow, $alpha: 0.9);
+
+      .sidebar_wrapper {
+        .header, .footer {
+          // overflow: visible;
+        }
+      }
+    }
+    // width: 0;
+  }
+
+  //min-width: 900px
+  @include tablet-landscape-up {
+    background-color: rgba($color: $sidebar-bg, $alpha: 0.98);
+    border-right-color: transparent;
+    left: -250px;
+    &_wrapper {
+      padding: 2em 0 0.5em 2em;
+    }
+    .menu-btn {
+      &.hide {
+        transform: translateX(0px);
+      }
+    }
+    &.open {
+      width: 260px;
+      left: 0;
+      border-right-color: rgba($color: $yellow, $alpha: 0.9);
+
+      .sidebar_wrapper {
+        .header, .footer {
+          // overflow: visible;
+        }
+      }
+    }
+    // width: 0;
+  }
+
+  @include desktop-up {
+    width: 260px;
+    left: 0;
+    border-right-color: rgba($color: $yellow, $alpha: 0.9);
+    background-color: rgba($color: $sidebar-bg, $alpha: 0.6);
+    &_wrapper {
+      padding: 2em 0 0.5em 2em;
+
+      .header, .footer {
+        overflow: visible;
+      }
+    }
+    .menu-btn {
+      visibility: hidden;
+    }
+  }
+
+  @include big-desktop-up {
+    width: 290px;
+    &_wrapper {
+      padding: 2.4em 0 0.7em 2.4em;
+    }
+  }
 }

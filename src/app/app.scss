@@ -13,8 +13,7 @@
     }
   @include mobile-only {
     .wrapper {
-      padding-left: 1em;
-      padding-right: 1em;
+      padding: 3.8em 1em 1.2em 1em;
     }
     padding: 0;
   }

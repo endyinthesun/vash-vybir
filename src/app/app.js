@@ -29,7 +29,6 @@ function App() {
               <Route path="/products" exact component={ProductsGoods} />
               <Route path="/gallery" component={Gallery} />
             </Switch>
-            {/*  <Gallery />*/}
           </div>
         </div>
       </Router>
